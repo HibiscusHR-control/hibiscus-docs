@@ -1,0 +1,27 @@
+{
+  "id": "compliance",
+  "title": "Compliance",
+  "description": "The Compliance module is your audit-readiness hub. It tracks employment document expiry dates, monitors ESA obligations, maintains a CRA filing calendar, and gives you a live compliance score across your organization. If something needs attention — an expiring certificate, a missed ROE, an overtime violation — it surfaces here.",
+  "source": "@site/docs/compliance.md",
+  "sourceDirName": ".",
+  "slug": "/compliance",
+  "permalink": "/compliance",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 10,
+  "frontMatter": {
+    "sidebar_position": 10,
+    "sidebar_label": "Compliance"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Onboarding  Offboarding",
+    "permalink": "/onboarding-offboarding"
+  },
+  "next": {
+    "title": "Performance",
+    "permalink": "/performance"
+  }
+}

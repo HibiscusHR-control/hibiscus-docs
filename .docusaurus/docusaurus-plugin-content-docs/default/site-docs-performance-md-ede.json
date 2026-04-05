@@ -1,0 +1,27 @@
+{
+  "id": "performance",
+  "title": "Performance",
+  "description": "The Performance module manages employee review cycles and goal tracking. You can run quarterly or annual reviews, assign ratings, and track progress on individual goals — all in one place.",
+  "source": "@site/docs/performance.md",
+  "sourceDirName": ".",
+  "slug": "/performance",
+  "permalink": "/performance",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 11,
+  "frontMatter": {
+    "sidebar_position": 11,
+    "sidebar_label": "Performance"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Compliance",
+    "permalink": "/compliance"
+  },
+  "next": {
+    "title": "Benefits",
+    "permalink": "/benefits"
+  }
+}

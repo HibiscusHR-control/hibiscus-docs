@@ -1,0 +1,27 @@
+{
+  "id": "settings",
+  "title": "Settings",
+  "description": "The Settings module is where you configure your Hibiscus HR account — your company profile, users and roles, payroll preferences, benefits administration, billing and subscription management, notification rules, security settings, and integrations.",
+  "source": "@site/docs/settings.md",
+  "sourceDirName": ".",
+  "slug": "/settings",
+  "permalink": "/settings",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 14,
+  "frontMatter": {
+    "sidebar_position": 14,
+    "sidebar_label": "Settings"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Reports",
+    "permalink": "/reports"
+  },
+  "next": {
+    "title": "FAQ",
+    "permalink": "/faq"
+  }
+}

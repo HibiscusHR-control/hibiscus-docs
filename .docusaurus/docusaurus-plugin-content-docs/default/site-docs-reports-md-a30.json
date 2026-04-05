@@ -1,0 +1,27 @@
+{
+  "id": "reports",
+  "title": "Reports",
+  "description": "The Reports module brings together data from every module in a single analytics hub. Whether you need a workforce headcount for a board presentation, a payroll deduction breakdown for your accountant, or an overtime summary for a compliance review, it is all here.",
+  "source": "@site/docs/reports.md",
+  "sourceDirName": ".",
+  "slug": "/reports",
+  "permalink": "/reports",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 13,
+  "frontMatter": {
+    "sidebar_position": 13,
+    "sidebar_label": "Reports"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Benefits",
+    "permalink": "/benefits"
+  },
+  "next": {
+    "title": "Settings",
+    "permalink": "/settings"
+  }
+}

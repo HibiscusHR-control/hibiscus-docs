@@ -1,0 +1,103 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/",
+          "mainDocId": "intro",
+          "docs": [
+            {
+              "id": "benefits",
+              "path": "/benefits",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "compliance",
+              "path": "/compliance",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "dashboard",
+              "path": "/dashboard",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "employees",
+              "path": "/employees",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "faq",
+              "path": "/faq",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "getting-started",
+              "path": "/getting-started",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "intro",
+              "path": "/intro",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "leave-management",
+              "path": "/leave-management",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "onboarding-offboarding",
+              "path": "/onboarding-offboarding",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "payroll",
+              "path": "/payroll",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "performance",
+              "path": "/performance",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "quick-start",
+              "path": "/quick-start",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "reports",
+              "path": "/reports",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "settings",
+              "path": "/settings",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "time-attendance",
+              "path": "/time-attendance",
+              "sidebar": "docsSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "docsSidebar": {
+              "link": {
+                "path": "/intro",
+                "label": "intro"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

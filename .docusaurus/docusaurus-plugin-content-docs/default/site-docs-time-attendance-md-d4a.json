@@ -1,0 +1,27 @@
+{
+  "id": "time-attendance",
+  "title": "Time & Attendance",
+  "description": "The Time & Attendance module tracks weekly employee hours, calculates overtime against provincial ESA thresholds, and manages timesheet approvals. Every province has its own overtime threshold — Hibiscus HR applies the correct rules automatically based on each employee's province.",
+  "source": "@site/docs/time-attendance.md",
+  "sourceDirName": ".",
+  "slug": "/time-attendance",
+  "permalink": "/time-attendance",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "sidebar_position": 8,
+    "sidebar_label": "Time  Attendance"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Leave Management",
+    "permalink": "/leave-management"
+  },
+  "next": {
+    "title": "Onboarding  Offboarding",
+    "permalink": "/onboarding-offboarding"
+  }
+}

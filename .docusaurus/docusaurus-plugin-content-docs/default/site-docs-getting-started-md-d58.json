@@ -1,0 +1,27 @@
+{
+  "id": "getting-started",
+  "title": "Getting Started",
+  "description": "This page covers everything you need to go from zero to running — logging in, navigating the platform, understanding your role, and orienting yourself on the dashboard.",
+  "source": "@site/docs/getting-started.md",
+  "sourceDirName": ".",
+  "slug": "/getting-started",
+  "permalink": "/getting-started",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3,
+    "sidebar_label": "Getting Started"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Quick Start Guide",
+    "permalink": "/quick-start"
+  },
+  "next": {
+    "title": "Dashboard",
+    "permalink": "/dashboard"
+  }
+}

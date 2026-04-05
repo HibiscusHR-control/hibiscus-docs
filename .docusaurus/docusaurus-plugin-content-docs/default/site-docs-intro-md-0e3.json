@@ -1,0 +1,23 @@
+{
+  "id": "intro",
+  "title": "Hibiscus HR — User Guide",
+  "description": "Welcome to the official documentation for Hibiscus HR, the HR platform built from the ground up for Canadian small and medium businesses.",
+  "source": "@site/docs/intro.md",
+  "sourceDirName": ".",
+  "slug": "/intro",
+  "permalink": "/intro",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1,
+    "sidebar_label": "Introduction"
+  },
+  "sidebar": "docsSidebar",
+  "next": {
+    "title": "Quick Start Guide",
+    "permalink": "/quick-start"
+  }
+}

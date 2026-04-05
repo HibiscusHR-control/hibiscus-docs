@@ -1,0 +1,27 @@
+{
+  "id": "employees",
+  "title": "Employees",
+  "description": "The Employees module is the foundation of Hibiscus HR. Every other module — payroll, leave, benefits, performance — pulls from the employee records you maintain here. This module covers the full employee lifecycle: hiring, ongoing management, and termination.",
+  "source": "@site/docs/employees.md",
+  "sourceDirName": ".",
+  "slug": "/employees",
+  "permalink": "/employees",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5,
+    "sidebar_label": "Employees"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Dashboard",
+    "permalink": "/dashboard"
+  },
+  "next": {
+    "title": "Payroll",
+    "permalink": "/payroll"
+  }
+}

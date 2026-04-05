@@ -1,0 +1,27 @@
+{
+  "id": "benefits",
+  "title": "Benefits",
+  "description": "The Benefits module administers your employee benefits program with fully configurable plans across 10 plan types. Create your own benefit plans, set employer/employee cost splits, manage eligibility rules, invite your benefits broker, and export EDI 834 files for carrier uploads.",
+  "source": "@site/docs/benefits.md",
+  "sourceDirName": ".",
+  "slug": "/benefits",
+  "permalink": "/benefits",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 12,
+  "frontMatter": {
+    "sidebar_position": 12,
+    "sidebar_label": "Benefits"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Performance",
+    "permalink": "/performance"
+  },
+  "next": {
+    "title": "Reports",
+    "permalink": "/reports"
+  }
+}

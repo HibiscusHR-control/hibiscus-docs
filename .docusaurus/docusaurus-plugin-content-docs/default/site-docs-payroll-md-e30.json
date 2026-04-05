@@ -1,0 +1,27 @@
+{
+  "id": "payroll",
+  "title": "Payroll",
+  "description": "The Payroll module handles your entire Canadian payroll cycle — from calculating CPP/CPP2 contributions and EI premiums to processing pay runs, generating T4 XML files, and tracking CRA remittance obligations. All calculations use CRA-compliant 2026 tax rates for all 13 provinces and territories, loaded from a centralized rate configuration. Provincial tax is calculated using real tax brackets — not estimates.",
+  "source": "@site/docs/payroll.md",
+  "sourceDirName": ".",
+  "slug": "/payroll",
+  "permalink": "/payroll",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "sidebar_position": 6,
+    "sidebar_label": "Payroll"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Employees",
+    "permalink": "/employees"
+  },
+  "next": {
+    "title": "Leave Management",
+    "permalink": "/leave-management"
+  }
+}

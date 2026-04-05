@@ -1,0 +1,27 @@
+{
+  "id": "dashboard",
+  "title": "Dashboard",
+  "description": "The Dashboard is the first thing you see after logging in. It gives you an at-a-glance picture of your entire workforce — key metrics, recent activity, upcoming starts, and regulatory deadlines — without needing to navigate into any specific module.",
+  "source": "@site/docs/dashboard.md",
+  "sourceDirName": ".",
+  "slug": "/dashboard",
+  "permalink": "/dashboard",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4,
+    "sidebar_label": "Dashboard"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Getting Started",
+    "permalink": "/getting-started"
+  },
+  "next": {
+    "title": "Employees",
+    "permalink": "/employees"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "onboarding-offboarding",
+  "title": "Onboarding & Offboarding",
+  "description": "The Onboarding & Offboarding module manages the beginning and end of every employee's journey at your organization. Onboarding gives new hires a structured first experience. Offboarding ensures every legal and administrative step is completed — including filing the Record of Employment (ROE) within the required CRA timeline.",
+  "source": "@site/docs/onboarding-offboarding.md",
+  "sourceDirName": ".",
+  "slug": "/onboarding-offboarding",
+  "permalink": "/onboarding-offboarding",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 9,
+  "frontMatter": {
+    "sidebar_position": 9,
+    "sidebar_label": "Onboarding  Offboarding"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Time  Attendance",
+    "permalink": "/time-attendance"
+  },
+  "next": {
+    "title": "Compliance",
+    "permalink": "/compliance"
+  }
+}
