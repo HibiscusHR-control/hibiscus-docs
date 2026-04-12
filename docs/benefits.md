@@ -243,7 +243,12 @@ Broker access can be revoked at any time from Settings → Benefits Admin. Click
 
 Hibiscus HR generates a **universal benefits enrollment CSV** for sharing with your broker or carrier enrollment team.
 
-Click **Export Enrollment CSV** from the Benefits module toolbar (or from the Broker Portal) to generate the file. The export includes 22 columns covering:
+There are two ways to download the file:
+
+1. **Universal export** — Click **Export Enrollment CSV** in the Benefits module toolbar (or from the Broker Portal). This produces a single CSV containing every active enrollment across every plan and every carrier.
+2. **Carrier-filtered export** — Open **Settings → Integrations** and click the **Manulife GroupBenefits**, **Sun Life Connect**, or **Canada Life** tile. Each tile has its own **Download Enrollment CSV** button that produces the same 22-column file pre-filtered to just that carrier's plans — useful when your broker only handles one carrier and you don't want to send data for the others.
+
+Both versions use the same 22-column structure, covering:
 
 - Action (ADD, CHANGE, TERMINATE)
 - Member identification (ID, name, relationship, SIN, date of birth)
@@ -251,7 +256,7 @@ Click **Export Enrollment CSV** from the Benefits module toolbar (or from the Br
 - Employment details (hire date, employment status, department)
 - Plan details (type, name, carrier, coverage start and end dates)
 
-The file is a standard comma-separated CSV that opens cleanly in Excel or Google Sheets. From Settings → Integrations, you can filter the export by carrier (Manulife, Sun Life, or Canada Life) to produce a carrier-specific file.
+The file is a standard comma-separated CSV that opens cleanly in Excel or Google Sheets.
 
 ### Why CSV instead of EDI 834?
 

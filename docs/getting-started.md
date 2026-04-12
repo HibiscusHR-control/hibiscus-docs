@@ -96,15 +96,17 @@ Your profile is accessible from the bottom of the left sidebar. From there you c
 
 ## Employee Login Experience
 
-Employees who are not HR administrators interact with Hibiscus HR through the **Employee Self-Service Onboarding Portal**. Here is how it works:
+Employees interact with Hibiscus HR through the **Employee Portal** — a self-service area separate from the admin dashboard. Here is the high-level path:
 
-1. **Onboarding invite** — The HR administrator sends an onboarding invite from the Onboarding module. The new hire receives a branded email with a "Start Onboarding" link.
-2. **Account activation** — Clicking the link creates the employee's account and logs them in automatically. No separate registration is needed.
-3. **Onboarding wizard** — The employee sees only the onboarding wizard (not the full admin dashboard). They complete 8 steps: Welcome, Personal Info, Work Eligibility (SIN), Banking (direct deposit), TD1 Tax Forms, Documents (policy sign-off), About You, and All Done.
-4. **Auto-save and resume** — Each step auto-saves. The employee can close their browser and come back later to pick up where they left off.
-5. **Completion** — Once the employee finishes onboarding, their data is automatically added to the system. HR is notified, and the onboarding record is marked complete.
+1. **Admin clicks Add Employee** — In the Employees module, the Admin runs the 4-step Employee Wizard. Submitting the wizard automatically provisions the employee's login and emails them a "Choose your password" link.
+2. **Employee sets a password** — The employee clicks the link in their welcome email, picks a password on the Set Password page, and is redirected to the standard sign-in page.
+3. **Employee signs in** — On their first sign-in, employees with incomplete onboarding are routed straight into the 8-step self-service onboarding wizard. Employees whose onboarding is already complete go directly to their portal home page.
+4. **Onboarding wizard (new hires only)** — 8 steps: Welcome, Personal Info, Work Eligibility (SIN), Banking (direct deposit), TD1 Tax Forms, Documents (policy sign-off), About You, and All Done. Each step auto-saves so the employee can resume later.
+5. **Ongoing portal** — Once onboarding is complete, the employee uses the portal to view pay stubs, request leave, manage benefits, edit their profile, and upload documents.
 
-> **Note:** Employees must complete the onboarding portal before they can be added to payroll.
+For the full walkthrough — including the welcome email flow, what each portal page looks like, and what employees can and cannot do — see the [Employee Portal](./employee-portal.md) page.
+
+> **Note:** Adding a new employee is restricted to users with the Admin role. Managers can view and edit existing employees but cannot create new ones.
 
 ---
 

@@ -207,11 +207,11 @@ The Billing section manages your Hibiscus HR subscription, payment method, and i
 
 Hibiscus HR offers three plan tiers. Your current plan is highlighted with a "Current Plan" badge.
 
-| Plan | Employee Limit | Modules Included |
-|------|---------------|-----------------|
-| **Starter** | Up to 25 | Core HR — Employees, Leave, Time & Attendance, Dashboard, Reports |
-| **Growth** | Up to 150 | All modules — adds Payroll, Compliance, Performance, Benefits, Onboarding |
-| **Scale** | Unlimited | Full platform — adds Broker Portal, priority support, advanced integrations |
+| Plan | Price | Employee Limit | Storage | Modules Included |
+|------|-------|---------------|---------|-----------------|
+| **Starter** | $8 / employee / month | Up to 25 | 1 GB | Dashboard, Employees, Leave Management, Time & Attendance, Onboarding & Offboarding, Compliance |
+| **Growth** | $12 / employee / month | Up to 150 | 5 GB | Everything in Starter, plus Payroll, Performance, Benefits, Reports, Integrations, T4 Filing, ROE generation |
+| **Scale** | $16 / employee / month | Unlimited | 25 GB | Everything in Growth, plus multi-location support and advanced analytics |
 
 Modules not included in your current plan are visible in the sidebar but display a lock icon and an upgrade prompt when clicked.
 
@@ -309,30 +309,87 @@ Connect Hibiscus HR to your other business tools.
 
 > **[Screenshot: Integrations settings section showing available integration tiles]**
 
+### Integration Categories
+
+Integrations are grouped into seven categories in the Settings → Integrations tab:
+
+1. **Accounting**
+2. **Benefits Carriers**
+3. **Identity & SSO**
+4. **Communication**
+5. **Recruiting**
+6. **Government & Compliance**
+7. **Background Checks**
+
+Each integration tile shows its current status — **Live**, **Connected**, **Available**, or **Coming Soon** — along with the appropriate action button.
+
 ### Available Integrations
+
+#### Accounting
 
 | Integration | Connection Type | Purpose |
 |-------------|----------------|---------|
-| **QuickBooks Online** | OAuth 2.0 | Post payroll journal entries directly into your QuickBooks chart of accounts after each pay run |
-| **Xero** | OAuth 2.0 | Post payroll journal entries into Xero and read your chart of accounts |
-| **Slack** | OAuth 2.0 | Receive HR notifications in a Slack channel |
-| **Microsoft 365 / Teams** | OAuth 2.0 | Sync calendar events and send notifications via Teams |
-| **Google Workspace** | OAuth 2.0 | Calendar sync and directory integration |
-| **LinkedIn** | OAuth 2.0 | Job posting and candidate sourcing |
+| **QuickBooks Online** | OAuth 2.0 | Post payroll journal entries, deductions, and employer contributions directly into your QuickBooks chart of accounts after each pay run |
+| **Xero** | OAuth 2.0 | Post payroll costs and employee expenses into Xero and read your chart of accounts |
 | **Sage 50 Canada** | CSV export | Download a GL journal CSV from the payroll completion screen and import it into Sage 50 |
-| **Manulife GroupBenefits** | CSV export | Download a Manulife-filtered benefits enrollment CSV to hand off to your broker or Manulife enrollment team |
-| **Sun Life Connect** | CSV export | Download a Sun Life-filtered benefits enrollment CSV to hand off to your broker or Sun Life enrollment team |
-| **Canada Life** | CSV export | Download a Canada Life-filtered benefits enrollment CSV to hand off to your broker or Canada Life enrollment team |
-| **CRA Internet File Transfer** | XML export | Download your T4/T4A XML file from the T4 Filing page and upload it to CRA |
-| **Service Canada ROE Web** | XML export | Generate ROE XML files from each offboarding record and upload them to ROE Web |
 
-Each integration tile shows the connection status (Connected / Not Connected / Available) and an action button.
+#### Benefits Carriers
+
+| Integration | Connection Type | Purpose |
+|-------------|----------------|---------|
+| **Manulife GroupBenefits** | CSV export | Download a Manulife-filtered universal benefits enrollment CSV to hand off to your broker or Manulife plan admin team |
+| **Sun Life Connect** | CSV export | Download a Sun Life-filtered universal benefits enrollment CSV to hand off to your broker or Sun Life plan admin team |
+| **Canada Life** | CSV export | Download a Canada Life-filtered universal benefits enrollment CSV to hand off to your broker or Canada Life plan admin team |
+
+#### Identity & SSO
+
+| Integration | Connection Type | Purpose |
+|-------------|----------------|---------|
+| **Microsoft SSO** | OAuth 2.0 (live) | Sign in with a Microsoft work or personal account — no separate password required |
+| **Google SSO** | OAuth 2.0 (live) | Sign in with a Google account — no separate password required |
+| **Okta** | OAuth 2.0 | Enterprise SSO via Okta — *coming soon* |
+
+#### Communication
+
+| Integration | Connection Type | Purpose |
+|-------------|----------------|---------|
+| **Slack** | OAuth 2.0 | Post real-time HR alerts to a Slack channel — leave approvals, payroll completion, ROE deadlines, onboarding tasks |
+| **Microsoft Teams** | Webhook URL | Send HR notifications to a Teams channel via incoming webhook |
+
+#### Recruiting
+
+| Integration | Connection Type | Purpose |
+|-------------|----------------|---------|
+| **LinkedIn Jobs** | OAuth 2.0 | Automatically post "We're hiring" updates to your LinkedIn page when a position opens through offboarding |
+| **Indeed Canada** | API key | Post open roles to Indeed Canada and import applicants directly into onboarding — *coming soon* |
+| **Greenhouse** | API key | ATS handoff — when a candidate is marked Hired in Greenhouse, trigger onboarding in Hibiscus HR — *coming soon* |
+
+#### Government & Compliance
+
+| Integration | Connection Type | Purpose |
+|-------------|----------------|---------|
+| **CRA My Business Account** | XML export | Generate CRA-compliant T4/T4A XML files from the T4 Filing page and upload via CRA Internet File Transfer |
+| **Service Canada ROE Web** | XML export | Generate Record of Employment XML files from each offboarding record and upload to ROE Web |
+| **WSIB eBusiness** | API key | File WSIB injury reports and premium payments for Ontario employees — *coming soon* |
+
+#### Background Checks
+
+| Integration | Connection Type | Purpose |
+|-------------|----------------|---------|
+| **Sterling Canada** | API key | Order criminal, credit, and reference checks directly from onboarding — *coming soon* |
+| **Triton Canada** | API key | Canadian criminal record checks, vulnerable sector checks, and reference verification — *coming soon* |
 
 ### OAuth Integrations
 
-QuickBooks Online, Xero, Slack, Microsoft 365/Teams, Google Workspace, and LinkedIn use real OAuth 2.0 flows. When you click **Connect**, you are redirected to the provider's login page to authorize access. No API keys or secrets need to be entered manually.
+QuickBooks Online, Xero, Slack, LinkedIn Jobs, Microsoft SSO, and Google SSO use real OAuth 2.0 flows. When you click **Connect** (or **Sign in with…**), you are redirected to the provider's login page to authorize access. No API keys or secrets need to be entered manually.
 
 For the accounting integrations (QuickBooks and Xero), Hibiscus HR requests the minimum scopes needed to post manual journal entries and read your chart of accounts — nothing more.
+
+For the SSO integrations (Microsoft and Google), authentication is handled entirely on the provider side — Hibiscus HR receives only the verified email and basic profile.
+
+### Webhook Integrations
+
+**Microsoft Teams** uses an incoming webhook URL rather than OAuth. In Teams: select a channel → Connectors → Incoming Webhook → Create → copy the URL into the Teams integration tile in Hibiscus HR.
 
 ### CSV Export Integrations
 
@@ -340,7 +397,7 @@ Sage 50, Manulife, Sun Life, and Canada Life are **export integrations**. Canadi
 
 - **Sage 50 Canada** — The GL export button lives on the payroll wizard's completion screen (Step 5). After processing a pay run, click **Download Sage 50 GL Export (CSV)** to get a balanced journal entry file you can import into Sage 50 via File → Import/Export → Import Records → General Journal Entries. Account numbers use Canadian small-business defaults; edit in Excel or remap during Sage's import wizard to match your chart of accounts.
 
-- **Benefits carriers (Manulife / Sun Life / Canada Life)** — Clicking **Connect** on a carrier tile opens a modal with a **Download Enrollment CSV** button that produces a file filtered to just that carrier's plans. The CSV has 22 industry-standard columns (Action, MemberID, Relationship, demographics, address, employment, plan details) that your broker or the carrier's enrollment team can map into the carrier's own template.
+- **Benefits carriers (Manulife / Sun Life / Canada Life)** — Clicking the carrier tile in Settings → Integrations opens a panel with a **Download Enrollment CSV** button. This produces the same 22-column universal benefits enrollment CSV available from the Benefits module toolbar, but pre-filtered to that one carrier's plans. Your broker or the carrier's enrollment team can map the columns into the carrier's own template — none of these portals (Manulife GroupNet, Sun Life Connect, Canada Life GroupNet) accepts raw uploads from third-party HR platforms.
 
 ### XML Export Integrations
 

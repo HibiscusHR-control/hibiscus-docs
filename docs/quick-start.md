@@ -86,9 +86,9 @@ CPP, EI, and provincial tax are calculated automatically based on each employee'
 Go to **Settings** (gear icon) and click **Billing**.
 
 1. **Review your plan** — Hibiscus HR offers three plan tiers:
-   - **Starter** — up to 25 employees, core HR modules
-   - **Growth** — up to 150 employees, all modules including payroll and compliance
-   - **Scale** — unlimited employees, full platform with broker portal and priority support
+   - **Starter** — $8/employee/month, up to 25 employees, 1 GB storage. Includes Employees, Leave Management, Time & Attendance, Onboarding & Offboarding, and Compliance.
+   - **Growth** — $12/employee/month, up to 150 employees, 5 GB storage. Adds Payroll, Performance, Benefits, Reports, Integrations, T4 Filing, and ROE generation.
+   - **Scale** — $16/employee/month, unlimited employees, 25 GB storage. Adds multi-location support and advanced analytics.
 2. **Verify your payment method** — click **Add Payment Method** to securely verify a credit card via Helcim (PCI compliant — card data never touches our servers)
 3. **Review estimated charges** — see your per-employee cost with applicable GST/HST/PST/QST based on your province
 

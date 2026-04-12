@@ -21,6 +21,7 @@ const sidebars = {
         'reports',
       ],
     },
+    'employee-portal',
     'settings',
     'faq',
   ],

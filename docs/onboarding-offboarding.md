@@ -42,10 +42,9 @@ New hire onboarding is displayed as a **kanban-style board**. Each employee is r
 
 | Stage | Description |
 |-------|-------------|
-| **Pre-Start** | Tasks to complete before the employee's first day (equipment order, system access setup, welcome email) |
-| **Day 1** | First-day orientation tasks (workspace setup, introductions, policy review) |
-| **Week 1** | First week tasks (team introductions, initial training, HR paperwork collection) |
-| **Month 1** | First month tasks (role-specific training, goal setting, check-in meeting) |
+| **Pre-Boarding** | Tasks to complete before the employee's first day (equipment order, system access setup, welcome email, self-service onboarding invite) |
+| **Week 1** | First week tasks (orientation, workspace setup, team introductions, initial training, HR paperwork collection) |
+| **First Month** | First month tasks (role-specific training, goal setting, check-in meetings, policy reviews) |
 | **Complete** | All tasks finished — onboarding closed |
 
 > **[Screenshot: Onboarding board showing employee cards in different stages]**
@@ -85,19 +84,23 @@ As tasks are completed, the system automatically advances the employee card to t
 
 ## Employee Self-Service Onboarding Portal
 
-In addition to the admin-side onboarding board, Hibiscus HR includes a **self-service onboarding portal** that lets new hires complete their own onboarding before their first day.
+In addition to the admin-side onboarding board, Hibiscus HR includes a **self-service onboarding portal** that lets new hires complete their own onboarding before their first day. The full hire-to-portal walkthrough — welcome email, password setup, the wizard itself, and the ongoing portal experience after the wizard — lives on the [Employee Portal](./employee-portal.md) page.
 
-### Sending an Onboarding Invite
+### How an Employee Receives Their Welcome Email
 
-From the Onboarding Detail drawer for any employee, click **Send Onboarding Invite**. The system sends a branded email to the employee with a "Start Onboarding" link.
+The welcome email is sent **automatically** when an Admin clicks **+ Add Employee** in the Employees module. There is no separate "send invite" step — adding the employee *is* the trigger. The email contains a 7-day password-setup link that drops the employee on the Set Password page.
+
+If the original email never landed (spam folder, typo, deleted), the Admin can resend it from the Onboarding detail drawer:
+
+1. Open **Onboarding** in the sidebar
+2. Click the employee's card
+3. Click **Resend Welcome Email** at the top of the drawer
+
+A fresh token is minted and the previous link is invalidated.
 
 ### What the New Hire Sees
 
-When the new hire clicks the link:
-
-1. Their employee account is created automatically
-2. They are logged in immediately — no separate registration step
-3. They see an 8-step onboarding wizard (not the admin dashboard)
+After setting their password and signing in for the first time, the employee is routed straight to the 8-step onboarding wizard (not the admin dashboard). They cannot reach any other part of the portal until the wizard is complete.
 
 ### The 8-Step Employee Onboarding Wizard
 

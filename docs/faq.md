@@ -161,9 +161,9 @@ The system automatically flags employees approaching their 90-day probation end 
 
 Hibiscus HR offers three plan tiers:
 
-- **Starter** — up to 25 employees. Includes core HR modules: Employees, Leave Management, Time & Attendance, Dashboard, and Reports.
-- **Growth** — up to 150 employees. Adds Payroll, Compliance, Performance, Benefits, and Onboarding & Offboarding.
-- **Scale** — unlimited employees. Full platform including Broker Portal, priority support, and advanced integrations.
+- **Starter** — $8/employee/month, up to 25 employees, 1 GB storage. Includes Dashboard, Employees, Leave Management, Time & Attendance, Onboarding & Offboarding, and Compliance.
+- **Growth** — $12/employee/month, up to 150 employees, 5 GB storage. Adds Payroll, Performance, Benefits, Reports, Integrations, T4 Filing, and ROE generation.
+- **Scale** — $16/employee/month, unlimited employees, 25 GB storage. Adds multi-location support and advanced analytics.
 
 Modules not included in your plan are visible in the sidebar with a lock icon. Clicking a locked module shows an upgrade prompt.
 

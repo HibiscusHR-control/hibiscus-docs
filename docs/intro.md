@@ -31,7 +31,7 @@ Hibiscus HR is an all-in-one HR platform designed specifically for Canadian busi
 | [Compliance](./compliance.md) | Document tracking, CRA calendar, ESA audit, incident management |
 | [Performance](./performance.md) | Review cycles, goal tracking, ratings |
 | [Benefits](./benefits.md) | Configurable plans, broker portal, enrollment CSV export |
-| Employee Self-Service | New hire onboarding portal with SIN, banking, TD1, document sign-off |
+| [Employee Portal](./employee-portal.md) | The self-service experience for new hires and existing employees — onboarding wizard, pay stubs, leave requests, benefits, profile, documents |
 | [Reports](./reports.md) | Workforce analytics across all modules |
 | [Settings](./settings.md) | Company setup, users, roles, billing, integrations |
 | Billing | Plan management, invoice history, Helcim payment processing |

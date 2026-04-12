@@ -131,8 +131,9 @@ Hibiscus HR automatically calculates all mandatory Canadian deductions using **C
 
 - Employee rate: **5.95%** of pensionable earnings (2026)
 - Employer rate: **5.95%** (matched, 1:1)
-- Annual employee maximum: **$3,867.50** (2026)
+- Year's Maximum Pensionable Earnings (YMPE): **$74,600** (2026)
 - Basic exemption: **$3,500**
+- Annual employee maximum: **$4,216.95** (2026)
 - Hibiscus HR tracks each employee's YTD CPP and stops deducting once the annual maximum is reached
 
 ### CPP2 (Second Additional CPP Contribution)
@@ -140,15 +141,18 @@ Hibiscus HR automatically calculates all mandatory Canadian deductions using **C
 Starting in 2024, a second ceiling for CPP contributions applies to higher-income earners:
 
 - CPP2 rate: **4.00%** on earnings between the first and second earnings ceilings (2026)
-- Second ceiling maximum pensionable earnings: tracked per the CRA schedule
+- Year's Additional Maximum Pensionable Earnings (YAMPE): **$85,000** (2026)
+- Annual employee CPP2 maximum: **$416.00** (2026)
 - Hibiscus HR automatically calculates CPP2 once an employee's pensionable earnings exceed the first ceiling
 - YTD tracking ensures CPP2 deductions stop at the annual maximum
 
 ### EI (Employment Insurance)
 
 - Employee rate: **1.64%** of insurable earnings (2026)
-- Employer rate: **2.296%** (1.4x the employee rate)
-- Annual employee maximum: **$1,049.12** (2026)
+- Employer rate: **2.296%** (1.4× the employee rate)
+- Maximum insurable earnings: **$68,900** (2026)
+- Annual employee maximum: **$1,129.96** (2026)
+- Annual employer maximum: **$1,581.94** (2026)
 - Hibiscus HR tracks YTD EI and stops deducting at the annual maximum
 
 ### Quebec-Specific Deductions
@@ -156,14 +160,17 @@ Starting in 2024, a second ceiling for CPP contributions applies to higher-incom
 Quebec employees are subject to different payroll deductions than employees in other provinces:
 
 **QPP (Quebec Pension Plan)** — Quebec's equivalent of CPP:
-- Employee rate: **6.40%** of pensionable earnings (2026)
-- Employer rate: **6.40%** (matched, 1:1)
+- Combined contribution rate: **6.30%** of pensionable earnings (2026)
+- QPP2 (second additional contribution): **4.00%** on earnings above the first ceiling
 - QPP replaces CPP for Quebec employees — the system automatically applies QPP instead of CPP when an employee's province is set to Quebec
 
 **QPIP (Quebec Parental Insurance Plan):**
-- Employee rate: **0.494%** of insurable earnings (2026)
-- Employer rate: **0.692%**
+- Employee rate: **0.455%** of insurable earnings (2026)
+- Employer rate: **0.636%**
+- Maximum insurable earnings: **$103,000** (2026)
 - QPIP is a Quebec-only deduction that funds parental leave benefits
+
+> **Note:** Quebec employees pay a reduced EI rate of **1.32%** (instead of 1.64%) because QPIP covers parental leave benefits federally administered through EI in other provinces.
 
 Quebec employees also have distinct provincial tax brackets, which are applied automatically.
 
