@@ -5,7 +5,7 @@ sidebar_label: "Benefits"
 
 # Benefits
 
-The Benefits module administers your employee benefits program with fully configurable plans across 10 plan types. Create your own benefit plans, set employer/employee cost splits, manage eligibility rules, invite your benefits broker, and export EDI 834 files for carrier uploads.
+The Benefits module administers your employee benefits program with fully configurable plans across 10 plan types. Create your own benefit plans, set employer/employee cost splits, manage eligibility rules, invite your benefits broker, and export enrollment data as a universal CSV to hand off to your broker or carrier team.
 
 > **[Screenshot: Benefits module showing the plan cards, cost summary strip, and the Enrollments tab]**
 
@@ -228,7 +228,7 @@ The broker receives an email with a secure login link. Once logged in, they see 
 |--------|-------------|
 | **Plan configurations** | View all active and deactivated plans, premiums, and eligibility rules |
 | **Enrollment data** | View enrollment counts and status by plan (no personal employee details) |
-| **EDI 834 download** | Download ANSI 834 enrollment files for carrier submission |
+| **Enrollment CSV download** | Download a universal benefits enrollment CSV for handoff to the carrier (no SINs, no addresses in the broker-facing version) |
 | **Cost summaries** | View monthly employer and employee cost totals |
 
 Brokers **cannot** modify any data, access other modules, or view employee SINs, addresses, or banking information.
@@ -239,17 +239,24 @@ Broker access can be revoked at any time from Settings → Benefits Admin. Click
 
 ---
 
-## EDI 834 Export
+## Enrollment CSV Export
 
-Hibiscus HR generates **ANSI 834 enrollment files** for submitting benefit enrollment data to insurance carriers.
+Hibiscus HR generates a **universal benefits enrollment CSV** for sharing with your broker or carrier enrollment team.
 
-Click **Export EDI 834** from the Benefits module toolbar (or from the Broker Portal) to generate the file. The export includes:
+Click **Export Enrollment CSV** from the Benefits module toolbar (or from the Broker Portal) to generate the file. The export includes 22 columns covering:
 
-- All active enrollments across all plans
-- Employee demographic data required by the carrier (name, date of birth, coverage effective dates)
-- Plan election codes
-- Enrollment, termination, and change transactions
+- Action (ADD, CHANGE, TERMINATE)
+- Member identification (ID, name, relationship, SIN, date of birth)
+- Contact details (email, phone, address)
+- Employment details (hire date, employment status, department)
+- Plan details (type, name, carrier, coverage start and end dates)
 
-The file follows the ANSI X12 834 Benefit Enrollment and Maintenance format, which is accepted by most Canadian insurance carriers for electronic enrollment processing.
+The file is a standard comma-separated CSV that opens cleanly in Excel or Google Sheets. From Settings → Integrations, you can filter the export by carrier (Manulife, Sun Life, or Canada Life) to produce a carrier-specific file.
 
-> **Tip:** Share the EDI 834 file with your broker or upload it directly to your carrier's portal to keep enrollments synchronized.
+### Why CSV instead of EDI 834?
+
+Canadian SMB carriers (Manulife GroupNet, Sun Life Connect, Canada Life GroupNet) do not accept raw ANSI X12 834 file uploads from third-party HR platforms via their plan admin portals. That type of integration requires an ISV partnership and is generally reserved for enterprise payroll/HRIS vendors with thousands of covered lives per employer.
+
+For Canadian SMBs, the practical workflow is: generate the enrollment CSV → hand it to your broker or the carrier's enrollment team → they apply the changes through the carrier's own admin tools. The CSV is human-readable, easy to review before sending, and can be mapped into any carrier-specific template.
+
+> **Tip:** Open the CSV in Excel to verify the enrollment records before sending. The broker-facing version downloaded from the Broker Portal redacts SINs and addresses.

@@ -181,7 +181,7 @@ Go to **Settings → Billing → Invoice History**. All past invoices are listed
 
 **Q: How do I give my benefits broker access?**
 
-Go to **Settings → Benefits Admin → Invite Broker**. Enter the broker's name, email, and brokerage firm. They receive an email with a secure login link that gives them read-only access to the Benefits module — plan configurations, enrollment data, and EDI 834 file downloads. Brokers cannot access employee personal information, payroll, or any other module. You can revoke their access at any time from the same settings page.
+Go to **Settings → Benefits Admin → Invite Broker**. Enter the broker's name, email, and brokerage firm. They receive an email with a secure login link that gives them read-only access to the Benefits module — plan configurations, enrollment data, and benefits enrollment CSV downloads. Brokers cannot access employee personal information, payroll, or any other module. You can revoke their access at any time from the same settings page.
 
 **Q: How do I update payroll rates for a new year?**
 

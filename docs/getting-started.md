@@ -114,7 +114,7 @@ Benefits brokers interact with Hibiscus HR through a limited, read-only portal. 
 
 1. **Broker invite** — An HR administrator sends a broker invite from Settings → Benefits Admin → Invite Broker. The broker receives an email with a secure login link.
 2. **Account activation** — Clicking the link creates the broker's account. No separate registration is needed.
-3. **Limited access** — Once logged in, the broker sees only the Benefits module in read-only mode. They can view plan configurations, enrollment data, and download EDI 834 files for carrier uploads. They cannot access employee personal information, payroll, or any other module.
+3. **Limited access** — Once logged in, the broker sees only the Benefits module in read-only mode. They can view plan configurations, enrollment data, and download a benefits enrollment CSV to hand off to the carrier. They cannot access employee personal information, payroll, or any other module.
 4. **Session security** — Broker sessions follow the same security policies as all other users, including session timeouts and password requirements.
 
 > **Note:** Brokers cannot modify any data. All changes to benefit plans and enrollments must be made by an HR administrator or Super Admin.

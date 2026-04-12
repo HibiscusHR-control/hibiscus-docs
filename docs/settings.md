@@ -185,7 +185,7 @@ Click **Deactivate** on any plan to remove it from new enrollments. Existing enr
 
 ### Broker Invite
 
-Click **Invite Broker** to send an access invitation to your external benefits broker. The broker receives an email with a secure login link that grants them read-only access to the Benefits module, including plan configurations, enrollment data, and EDI 834 file downloads.
+Click **Invite Broker** to send an access invitation to your external benefits broker. The broker receives an email with a secure login link that grants them read-only access to the Benefits module, including plan configurations, enrollment data, and benefits enrollment CSV downloads (with SINs and addresses redacted in the broker-facing version).
 
 | Field | Notes |
 |-------|-------|
@@ -313,21 +313,35 @@ Connect Hibiscus HR to your other business tools.
 
 | Integration | Connection Type | Purpose |
 |-------------|----------------|---------|
-| **QuickBooks** | Real OAuth | Sync payroll journal entries to your accounting software |
-| **Xero** | Real OAuth | Export payroll data to Xero |
-| **Slack** | Real OAuth | Receive HR notifications in a Slack channel |
-| **Microsoft 365 / Teams** | Real OAuth | Sync calendar events, send notifications via Teams |
-| **Google Workspace** | Real OAuth | Calendar sync, directory integration |
-| **LinkedIn** | Real OAuth | Job posting and candidate sourcing |
-| **Sage** | API key | Connect with Sage 50 or Sage Business Cloud |
-| **Benefits Provider** | API key | Direct feed to your benefits carrier for enrollment updates |
+| **QuickBooks Online** | OAuth 2.0 | Post payroll journal entries directly into your QuickBooks chart of accounts after each pay run |
+| **Xero** | OAuth 2.0 | Post payroll journal entries into Xero and read your chart of accounts |
+| **Slack** | OAuth 2.0 | Receive HR notifications in a Slack channel |
+| **Microsoft 365 / Teams** | OAuth 2.0 | Sync calendar events and send notifications via Teams |
+| **Google Workspace** | OAuth 2.0 | Calendar sync and directory integration |
+| **LinkedIn** | OAuth 2.0 | Job posting and candidate sourcing |
+| **Sage 50 Canada** | CSV export | Download a GL journal CSV from the payroll completion screen and import it into Sage 50 |
+| **Manulife GroupBenefits** | CSV export | Download a Manulife-filtered benefits enrollment CSV to hand off to your broker or Manulife enrollment team |
+| **Sun Life Connect** | CSV export | Download a Sun Life-filtered benefits enrollment CSV to hand off to your broker or Sun Life enrollment team |
+| **Canada Life** | CSV export | Download a Canada Life-filtered benefits enrollment CSV to hand off to your broker or Canada Life enrollment team |
+| **CRA Internet File Transfer** | XML export | Download your T4/T4A XML file from the T4 Filing page and upload it to CRA |
+| **Service Canada ROE Web** | XML export | Generate ROE XML files from each offboarding record and upload them to ROE Web |
 
-Each integration tile shows the connection status (Connected / Not Connected) and a Configure button.
+Each integration tile shows the connection status (Connected / Not Connected / Available) and an action button.
 
 ### OAuth Integrations
 
-QuickBooks, Xero, Slack, Microsoft 365/Teams, Google Workspace, and LinkedIn use real OAuth 2.0 flows. When you click **Connect**, you are redirected to the provider's login page to authorize access. No API keys or secrets need to be entered manually.
+QuickBooks Online, Xero, Slack, Microsoft 365/Teams, Google Workspace, and LinkedIn use real OAuth 2.0 flows. When you click **Connect**, you are redirected to the provider's login page to authorize access. No API keys or secrets need to be entered manually.
 
-### API Key Integrations
+For the accounting integrations (QuickBooks and Xero), Hibiscus HR requests the minimum scopes needed to post manual journal entries and read your chart of accounts — nothing more.
 
-Sage and Benefits Provider integrations require an API key from the provider. Enter the key in the configuration drawer and click **Save** to activate the connection.
+### CSV Export Integrations
+
+Sage 50, Manulife, Sun Life, and Canada Life are **export integrations**. Canadian SMB carriers and desktop accounting products don't accept direct third-party API uploads, so Hibiscus HR generates clean, industry-standard CSV files that you hand off to the destination — your broker, the carrier's enrollment team, or your Sage 50 import wizard.
+
+- **Sage 50 Canada** — The GL export button lives on the payroll wizard's completion screen (Step 5). After processing a pay run, click **Download Sage 50 GL Export (CSV)** to get a balanced journal entry file you can import into Sage 50 via File → Import/Export → Import Records → General Journal Entries. Account numbers use Canadian small-business defaults; edit in Excel or remap during Sage's import wizard to match your chart of accounts.
+
+- **Benefits carriers (Manulife / Sun Life / Canada Life)** — Clicking **Connect** on a carrier tile opens a modal with a **Download Enrollment CSV** button that produces a file filtered to just that carrier's plans. The CSV has 22 industry-standard columns (Action, MemberID, Relationship, demographics, address, employment, plan details) that your broker or the carrier's enrollment team can map into the carrier's own template.
+
+### XML Export Integrations
+
+CRA Internet File Transfer and Service Canada ROE Web both use regulator-specified XML formats. The files are generated by their respective source modules (T4 Filing for CRA, Offboarding for ROE Web) and you upload them to the regulator's portal manually.

@@ -30,7 +30,7 @@ Hibiscus HR is an all-in-one HR platform designed specifically for Canadian busi
 | [Onboarding & Offboarding](./onboarding-offboarding.md) | Checklists, task assignment, ROE filing |
 | [Compliance](./compliance.md) | Document tracking, CRA calendar, ESA audit, incident management |
 | [Performance](./performance.md) | Review cycles, goal tracking, ratings |
-| [Benefits](./benefits.md) | Configurable plans, broker portal, EDI 834 export |
+| [Benefits](./benefits.md) | Configurable plans, broker portal, enrollment CSV export |
 | Employee Self-Service | New hire onboarding portal with SIN, banking, TD1, document sign-off |
 | [Reports](./reports.md) | Workforce analytics across all modules |
 | [Settings](./settings.md) | Company setup, users, roles, billing, integrations |
@@ -52,7 +52,7 @@ Hibiscus HR uses a role-based access system. Your role determines which modules 
 | **Payroll Admin** | Payroll, Reports, Employees (read-only) |
 | **Manager** | Leave approvals, Time & Attendance for their team, read-only Reports |
 | **Employee** | Self-service onboarding portal, personal profile, leave requests |
-| **Broker** | Read-only benefits access, enrollment data, EDI 834 download |
+| **Broker** | Read-only benefits access, enrollment data, enrollment CSV download |
 
 Most instructions in this guide are written from the perspective of an HR Admin or Super Admin. Where a feature is role-restricted, it is noted.
 
