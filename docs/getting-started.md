@@ -25,7 +25,11 @@ If you have forgotten your password, click **Forgot password?** above the passwo
 
 ### First-time login
 
-If your account was just created by your HR administrator, you will receive an email with your temporary credentials. You will be prompted to set a new password on first login.
+If your account was just created by your HR administrator, you'll receive a welcome email titled **"You're all set — choose a password for Hibiscus HR"**. Click the **Choose Password** button to open the Set Password page, enter a password that meets the complexity requirements (min 8 characters, one uppercase, one lowercase, one number, one special character), then sign in normally. The password-setup link is valid for 7 days.
+
+### Email verification banner
+
+If you haven't yet verified your email address, an amber banner appears at the top of every page after login: *"Please verify your email address."* Click **Resend email** to receive a fresh verification link, then click the link in the email. The banner disappears once verified. You can keep using Hibiscus HR while unverified, but verifying secures your account and enables password recovery.
 
 ### Login errors
 
@@ -45,21 +49,25 @@ Once logged in, you land on the **Dashboard**. The layout has three areas:
 
 The left sidebar contains links to all modules. It is always visible. Each icon represents a module:
 
-| Icon | Module |
-|------|--------|
-| Grid / Home | Dashboard |
-| People | Employees |
-| Dollar sign | Payroll |
-| Calendar | Leave Management |
-| Clock | Time & Attendance |
-| Clipboard check | Onboarding & Offboarding |
-| Shield | Compliance |
-| Star | Performance |
-| Heart | Benefits |
-| Bar chart | Reports |
-| Gear | Settings |
+| Icon | Module | Who sees it |
+|------|--------|-------------|
+| Dashboard grid | Dashboard | Admin, Manager |
+| User check | My Team | Admin, Manager |
+| People | Employees | Admin, Manager |
+| Network tree | Org Chart | Admin, Manager |
+| Dollar sign | Payroll | Admin |
+| File text | T4 Filing | Admin (indented under Payroll) |
+| Clock | Time & Attendance | Admin, Manager |
+| Calendar | Leave Management | Admin, Manager |
+| Heart | Benefits | Admin |
+| Star | Performance | Admin, Manager |
+| User plus | Onboarding | Admin, Manager |
+| Shield check | Compliance | Admin, Manager |
+| Book open | Policies (AI Handbook) | Admin (indented under Compliance) |
+| Bar chart | Reports | Admin |
+| Gear | Settings | Super Admin |
 
-The currently active module is highlighted in purple.
+The currently active module is highlighted in purple. Items you don't have access to (either by role or by plan tier) show a lock icon and a gentle upgrade prompt when clicked.
 
 At the bottom of the sidebar you will find your user avatar and name. Click it to access your profile or log out.
 

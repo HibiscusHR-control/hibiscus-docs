@@ -7,6 +7,8 @@ sidebar_label: "Compliance"
 
 The Compliance module is your audit-readiness hub. It tracks employment document expiry dates, monitors ESA obligations, maintains a CRA filing calendar, and gives you a live compliance score across your organization. If something needs attention — an expiring certificate, a missed ROE, an overtime violation — it surfaces here.
 
+For the **policy-authoring** side of compliance (writing employee handbooks and HR policies), see the separate [AI Handbook & Policies](./handbook-policies.md) module. The two work together: policies you publish there count toward compliance readiness, and employee handbook acknowledgements are tracked separately for audit.
+
 > **[Screenshot: Compliance module showing the Overview tab with the compliance score and checklist]**
 
 ---
@@ -332,3 +334,30 @@ The bottom of the detail drawer shows a **full audit log** of every change made 
 | **WSIB flag changed** | When the WSIB reportable flag is toggled on or off |
 
 The audit log is read-only and cannot be modified. It provides a complete, tamper-proof record of the incident lifecycle for compliance and legal purposes.
+
+---
+
+## Regulatory Archive (WORM Storage)
+
+When a tenant account is cancelled, certain records must be retained for Canadian regulatory compliance — they cannot be deleted with the rest of the account data. Hibiscus HR archives these records to **Azure Blob Storage with time-based WORM (Write-Once-Read-Many) immutability**.
+
+### What gets archived
+
+| Category | Retention | Legal basis |
+|----------|-----------|-------------|
+| Payroll records | 7 years | CRA Income Tax Act s.230 |
+| T4 / tax filings | 7 years | CRA |
+| ROE filings | 6 years | Service Canada |
+| Incident / WSIB records | 7 years | OHSA |
+| Benefits enrollment | 7 years | CRA taxable benefit reporting |
+| Employee records | 3 years after termination | ESA |
+| Timesheets | 3 years | ESA |
+| Performance reviews | 3 years | Employment standards |
+
+### Immutability guarantee
+
+The archive container has a **locked** time-based retention policy at the storage-infrastructure level. Once written, data cannot be modified or deleted — by Hibiscus HR staff, by the customer, or even by the storage administrator — until the retention period expires. This guarantee is enforced by Azure Storage, not by application code.
+
+SINs within archived records remain encrypted with AES-256-GCM at the field level. Archives are stored in Azure Canada Central — data never leaves Canada.
+
+See the [Data Retention Policy](https://hibiscushr.ca/data-retention) for the full customer-facing policy, including the three-tier retention model (90/120-day deletion windows).

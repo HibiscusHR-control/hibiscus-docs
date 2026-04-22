@@ -49,9 +49,21 @@ New hire onboarding is displayed as a **kanban-style board**. Each employee is r
 
 > **[Screenshot: Onboarding board showing employee cards in different stages]**
 
-### Starting a New Onboarding
+### Automatic Onboarding via ATS (Workable)
 
-Click **+ New Onboarding** to open the New Onboarding drawer.
+If your organization uses Workable for recruiting, you can skip the manual employee creation step entirely. When a candidate moves to the **Hired** stage in Workable, Hibiscus HR automatically:
+
+1. Creates the employee record from the candidate's Workable profile (name, email, job title, department)
+2. Opens a new onboarding case on the kanban board in **Pre-Boarding**
+3. Sends the employee the welcome email with a password-setup link
+
+The handoff is driven by a signed webhook from Workable. Setup takes ~2 minutes — go to **Settings → Integrations → Workable** and connect. Once connected, no further action needed — new hires flow in as they happen.
+
+See [Settings → Integrations](./settings.md#recruiting) for connection details.
+
+### Starting a New Onboarding Manually
+
+If you don't use an integrated ATS, or you need to add someone not represented in your Workable pipeline, click **+ New Onboarding** to open the New Onboarding drawer.
 
 > **[Screenshot: New Onboarding drawer]**
 
@@ -111,7 +123,7 @@ After setting their password and signing in for the first time, the employee is 
 | **3. Work Eligibility (SIN)** | Social Insurance Number entry — stored with field-level encryption |
 | **4. Banking** | Direct deposit information (institution number, transit number, account number) — stored encrypted |
 | **5. TD1 Tax Forms** | Federal and provincial TD1 personal tax credit claims |
-| **6. Documents** | Review and sign-off on company policies (e.g. code of conduct, confidentiality agreement, health and safety) |
+| **6. Documents** | Review and sign-off on company policies — this is where the new hire acknowledges the current compiled Employee Handbook (see [AI Handbook & Policies](./handbook-policies.md)) and any role-specific policies |
 | **7. About You** | Optional personal details — preferred name, dietary restrictions, t-shirt size, fun facts |
 | **8. All Done** | Confirmation screen showing that onboarding is complete |
 

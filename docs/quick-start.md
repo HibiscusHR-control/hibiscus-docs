@@ -87,9 +87,9 @@ Go to **Settings** (gear icon) and click **Billing**.
 
 1. **Review your plan** — Hibiscus HR offers three plan tiers:
    - **Starter** — $8/employee/month, up to 25 employees, 1 GB storage. Includes Employees, Leave Management, Time & Attendance, Onboarding & Offboarding, and Compliance.
-   - **Growth** — $12/employee/month, up to 150 employees, 5 GB storage. Adds Payroll, Performance, Benefits, Reports, Integrations, T4 Filing, and ROE generation.
-   - **Scale** — $16/employee/month, unlimited employees, 25 GB storage. Adds multi-location support and advanced analytics.
-2. **Verify your payment method** — click **Add Payment Method** to securely verify a credit card via Helcim (PCI compliant — card data never touches our servers)
+   - **Growth** — $12/employee/month, up to 150 employees, 5 GB storage. Adds Payroll, Performance, Benefits, Reports, Integrations, T4 Filing, ROE generation, and the AI Handbook Generator.
+   - **Scale** — Custom pricing, unlimited employees, 25 GB storage. For established businesses with complex needs. Contact sales for a scoped quote.
+2. **Verify your payment method** — click **Add Payment Method** to securely verify a credit card via Helcim (PCI DSS Level 1 compliant — card data never touches Hibiscus HR servers, it is tokenized in your browser by HelcimPay.js)
 3. **Review estimated charges** — see your per-employee cost with applicable GST/HST/PST/QST based on your province
 
 Billing is monthly in arrears, based on the number of active employees during the billing period.
@@ -102,6 +102,7 @@ Now that the basics are set up, explore these modules at your own pace:
 
 | Module | What to try |
 |--------|------------|
+| **AI Handbook & Policies** | Generate your first province-aware HR policy — vacation, sick leave, or right-to-disconnect — and see it draft in under 30 seconds |
 | **Leave Management** | Create a leave request and approve it |
 | **Time & Attendance** | Enter timesheet hours for a week |
 | **Benefits** | Configure your benefit plans (10 plan types available), set eligibility rules, and enroll employees |
@@ -129,7 +130,9 @@ That's it. The platform handles the compliance math — you just make the decisi
 
 - **User Guide:** Browse the full documentation for detailed instructions on every module
 - **FAQ:** Check the [Frequently Asked Questions](./faq.md) for common answers
-- **Email:** hibiscushrmain@gmail.com — we respond within one business day
+- **Support email:** support@hibiscushr.ca — we respond within one business day
+- **Sales questions:** sales@hibiscushr.ca
+- **In-app:** Click the help icon in the bottom-left of the admin app to submit a ticket directly
 - **Demo:** [Book a walkthrough](https://hibiscushr.ca/book-demo) if you'd like a guided tour
 
 ---

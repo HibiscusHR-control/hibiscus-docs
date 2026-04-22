@@ -11,11 +11,15 @@ sidebar_label: "FAQ"
 
 **Q: What provinces does Hibiscus HR support?**
 
-All ten Canadian provinces — Ontario, British Columbia, Alberta, Quebec, Manitoba, Saskatchewan, Nova Scotia, New Brunswick, Prince Edward Island, and Newfoundland & Labrador. Federal jurisdiction (Canada Labour Code) is also supported. Each province's employment standards are applied based on the province set on each employee's record.
+All ten Canadian provinces — Ontario, British Columbia, Alberta, Quebec, Manitoba, Saskatchewan, Nova Scotia, New Brunswick, Prince Edward Island, and Newfoundland & Labrador — plus the three territories and federal jurisdiction (Canada Labour Code). Each province's employment standards are applied based on the province set on each employee's record.
 
 **Q: Is my data stored in Canada?**
 
-Yes. All data is stored in Canadian data centres. Hibiscus HR is fully PIPEDA-compliant and never transfers employee data to US servers.
+Yes. All data is stored in Microsoft Azure's Canada Central region. Hibiscus HR is fully PIPEDA-compliant and never transfers employee data to US servers. Email routing uses Cloudflare Email Routing (Canadian-hosted), error telemetry uses Azure Application Insights (Canada Central), and all backups remain in Canadian data centres.
+
+**Q: Who owns Hibiscus HR?**
+
+Hibiscus HR is independently Canadian-owned and operated. Built in Oakville, Ontario by a solo founder. No foreign parent company. If the platform ever expands internationally, it would be launched as a separate product under a different name — what you see at hibiscushr.ca will always be Canadian-owned, Canadian-hosted, and Canadian-answered.
 
 **Q: Can employees log in themselves?**
 
@@ -87,6 +91,42 @@ The Time & Attendance module calculates overtime *hours* (hours above the provin
 
 ---
 
+## AI Handbook & Policies
+
+**Q: How does the AI Handbook Generator work?**
+
+You pick from 15 standard Canadian HR policy templates (vacation, sick leave, parental leave, harassment, overtime, right-to-disconnect, termination, and more). Hibiscus HR drafts the policy using Claude, grounded in the statutory minimums for every province your employees actually work in — pulled automatically from your Employees module. You edit the draft, certify it has been reviewed by counsel, and publish. Generation typically takes 15–30 seconds per policy.
+
+**Q: What does "customer-certified" mean?**
+
+Before a policy can move from draft to published, the admin clicks through a certification modal attesting that qualified Canadian employment counsel has reviewed the policy. This is how the AI handbook feature shifts final content-accuracy liability to the customer's organization — you certify the draft is appropriate for your business before distributing it to employees. The EULA details this allocation.
+
+**Q: What if the AI generates something incorrect?**
+
+The certification step exists specifically for this. Hibiscus HR drafts with AI assistance; you review with counsel before publishing. The prompts are grounded in structured ESA data we maintain for all 10 provinces + federal (refreshed annually every December before the new year), so provincial minimums are accurate. But you should always have your counsel review the specific language, especially for harassment, termination, and accommodation policies.
+
+**Q: Can I edit a generated policy?**
+
+Yes — every policy opens in a split-pane editor with markdown source on the left and rendered preview on the right. Edit freely. Every save preserves the previous version in history, so nothing is lost. If you edit a currently-published policy, it automatically reverts to draft status and you need to re-certify before republishing (the certification applied to the old content, not your edits).
+
+**Q: How do employees acknowledge the handbook?**
+
+Employees see the current compiled handbook in the Employee Portal → Handbook. They read all policy sections inline, then type their full legal name in the signature form at the bottom and click **I Acknowledge**. The acknowledgement is timestamped with their IP and browser, and the record is permanent for that specific handbook version. Admins can view per-version acknowledgement lists from the Handbook Archive tab.
+
+**Q: What happens when I compile a new handbook version after employees have signed the old one?**
+
+The old acknowledgements stay on the record for audit purposes. Employees visiting the Handbook page after a new version is compiled will see the new content and be prompted to acknowledge the new version. Previous-version acknowledgements are never erased.
+
+**Q: What's in the handbook PDF?**
+
+Cover page (company name, title, version number, date, counsel firm if identified), table of contents, each selected policy rendered as a section, and an employee acknowledgement signature page at the end. Letter-size, PDF. Downloads to your computer and is simultaneously archived in the Handbook Archive tab.
+
+**Q: Do I need to regenerate policies when ESA rules change?**
+
+Hibiscus HR maintains the underlying ESA data for all 10 provinces. When provincial minimums change (usually in January for a new year), regenerate affected policies and compile a fresh handbook version. This takes minutes, not weeks. See the [AI Handbook & Policies](./handbook-policies.md) page for full details.
+
+---
+
 ## Onboarding & Offboarding
 
 **Q: How quickly must I file an ROE after an employee's last day?**
@@ -95,7 +135,7 @@ Service Canada requires the ROE to be filed within **5 calendar days** of the em
 
 **Q: Can I customize the onboarding checklist?**
 
-Custom onboarding task templates are on the roadmap. In the current version, the default checklist covers the most common onboarding steps for Canadian employers. Contact support to request a custom template configuration.
+Yes. Go to **Settings → Templates → Onboarding** to edit the default 8-step template — add tasks, remove tasks, reassign categories (Documentation, Payroll, Benefits, IT, Orientation, Compliance), and reorder. The template you define becomes the starting checklist for every new hire you add. You can still customize individual onboarding cases after they're created.
 
 ---
 
@@ -127,7 +167,17 @@ Yes. Each module has an Export CSV button. For a full data export across all mod
 
 **Q: What happens to data if I cancel my subscription?**
 
-Your data is retained for 90 days after cancellation, during which you can request a full export. After 90 days, data is permanently deleted in accordance with our data retention policy and PIPEDA requirements.
+A three-tier retention model governs deletion:
+
+- **Days 0–90 after cancellation:** Full read-only access; export everything via Settings → Billing → Export Data or Reports.
+- **Days 91–120:** Data queued for deletion. Regulated records (payroll, T4 approvals, ROE filings, benefits, employee records, compliance documents, incidents, performance reviews) are extracted and archived to **Azure Blob Storage with time-based WORM (Write-Once-Read-Many) immutability** — 7-year retention, locked policy that even our own storage administrators cannot bypass.
+- **Day 120+:** Non-regulated data is permanently deleted. Tenant database schema dropped, user accounts removed, Deletion Certificate generated.
+
+Full policy details are at [hibiscushr.ca/data-retention](https://hibiscushr.ca/data-retention).
+
+**Q: Does Hibiscus HR retain records required by Canadian regulators?**
+
+Yes. Payroll records (7 years, CRA Income Tax Act s.230), T4/tax filings (7 years, CRA), ROE filings (6 years, Service Canada), incident/WSIB records (7 years, OHSA), benefits enrollment (7 years, CRA taxable benefit), employee records (3 years after termination, ESA), timesheets (3 years, ESA) are all retained per statutory requirement. These are preserved in immutable archive storage after tenant deletion for the full retention period.
 
 ---
 
@@ -162,8 +212,8 @@ The system automatically flags employees approaching their 90-day probation end 
 Hibiscus HR offers three plan tiers:
 
 - **Starter** — $8/employee/month, up to 25 employees, 1 GB storage. Includes Dashboard, Employees, Leave Management, Time & Attendance, Onboarding & Offboarding, and Compliance.
-- **Growth** — $12/employee/month, up to 150 employees, 5 GB storage. Adds Payroll, Performance, Benefits, Reports, Integrations, T4 Filing, and ROE generation.
-- **Scale** — $16/employee/month, unlimited employees, 25 GB storage. Adds multi-location support and advanced analytics.
+- **Growth** — $12/employee/month, up to 150 employees, 5 GB storage. Adds Payroll, Performance, Benefits, Reports, Integrations, T4 Filing, ROE generation, and the AI Handbook Generator.
+- **Scale** — Custom pricing, unlimited employees, 25 GB storage. For established businesses with complex needs — multi-location support, dedicated onboarding specialist, quarterly compliance reviews. Contact sales@hibiscushr.ca for a quote.
 
 Modules not included in your plan are visible in the sidebar with a lock icon. Clicking a locked module shows an upgrade prompt.
 
@@ -201,6 +251,9 @@ Go to **Compliance** and click the **Incidents** tab. Click **Report Incident** 
 
 If you cannot find the answer here:
 
-- **Email:** hibiscushrmain@gmail.com
+- **Support email:** support@hibiscushr.ca
+- **Sales questions:** sales@hibiscushr.ca
+- **General inquiries:** info@hibiscushr.ca
+- **In-app:** Click the help icon in the bottom-left of the admin app to submit a ticket directly
 - **Website:** hibiscushr.ca
 - **Response time:** Within 1 business day

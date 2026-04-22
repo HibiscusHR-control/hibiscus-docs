@@ -88,8 +88,11 @@ Click **Process Payroll** to finalize the run. Once processed:
 - Each employee's year-to-date CPP and EI accumulators are updated
 - The CRA remittance amount is added to your remittance tracking
 - The pay period can no longer be edited
+- An **immutable pay stub HTML** is generated and stored for every employee on the run — if an employee or regulator later needs to see exactly what was communicated at the time of pay, it's reproducible verbatim
 
-> **Important:** Processed payroll runs cannot be reversed in the current version. If you need to make a correction, contact your HR administrator.
+**Pay stubs are permanent.** Even if an employee record changes later (new address, role change, etc.), the original pay stub renders with the details as they were at the time of the run. This satisfies provincial pay-statement retention requirements and keeps your audit trail clean.
+
+> **Important:** Processed payroll runs cannot be reversed in the current version. Corrections are made by running an adjustment in the next pay period. For major errors, contact support@hibiscushr.ca.
 
 ---
 
@@ -120,6 +123,32 @@ Click on any row in the payroll history table to open the **Run Detail** drawer.
 ### Exporting Payroll History
 
 Click **Export History** to download a CSV of all payroll runs visible in the table. The export includes all columns shown in the table.
+
+---
+
+## Direct Deposit via CPA-005 EFT
+
+After a payroll run is processed, Hibiscus HR generates a **CPA Standard 005** Electronic Funds Transfer file — the Payments Canada-standardized format that every major Canadian business bank accepts for bulk direct deposit.
+
+### How It Works
+
+1. Open the completed pay run in the Payroll History table
+2. Click **Download Bank File** (CPA-005 format)
+3. The file downloads to your computer with a sequential file number (required by banks for audit)
+4. Upload the file to your bank's EFT system (RBC Express, BMO Online Banking for Business, TD Business EFT, Scotiabank, CIBC Cash Management, National Bank, etc.)
+5. The bank processes the deposits on the date you specified in the file
+
+### Validation Before Generating
+
+Hibiscus HR validates the bank file before generation and blocks it if any employee is missing direct-deposit information. You'll see a modal listing each employee missing an institution number, transit number, or account number, with **Fix →** links that jump straight to the employee edit form with the banking section in focus.
+
+### File Numbering
+
+CPA-005 files require a unique, sequential file number per origination. Hibiscus HR maintains this counter automatically per tenant — you'll never generate a duplicate file number, and the next number is shown on screen when you download.
+
+### Cheque Fallback
+
+For employees without direct deposit set up (or for one-off manual payments), you can mark their pay run as **Cheque** and handle it manually outside the bank file.
 
 ---
 

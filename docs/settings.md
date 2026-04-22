@@ -87,10 +87,13 @@ Click **+ Add User** to invite a new person to the platform.
 
 | Role | Access level |
 |------|-------------|
-| **Super Admin** | Full access — all modules, all settings, user management |
-| **HR Admin** | All modules — add/edit employees, approve leave, run payroll, manage compliance |
+| **Super Admin** | Full access — all modules, all settings, user management, billing |
+| **HR Admin** | All modules — add/edit employees, approve leave, run payroll, manage compliance, publish handbook policies |
 | **Payroll Admin** | Payroll module, Employees (read-only), Reports (payroll tab) |
+| **Benefits Admin** | Benefits module, broker invites |
 | **Manager** | Leave approvals for their team, Time & Attendance for their team, read-only Reports |
+| **Employee** | Self-service Employee Portal — profile, leave requests, pay stubs, handbook acknowledgement |
+| **Broker** | Read-only Benefits module (plan configurations, enrollment CSV downloads; personal data redacted) |
 
 ### Deactivating a User
 
@@ -210,8 +213,8 @@ Hibiscus HR offers three plan tiers. Your current plan is highlighted with a "Cu
 | Plan | Price | Employee Limit | Storage | Modules Included |
 |------|-------|---------------|---------|-----------------|
 | **Starter** | $8 / employee / month | Up to 25 | 1 GB | Dashboard, Employees, Leave Management, Time & Attendance, Onboarding & Offboarding, Compliance |
-| **Growth** | $12 / employee / month | Up to 150 | 5 GB | Everything in Starter, plus Payroll, Performance, Benefits, Reports, Integrations, T4 Filing, ROE generation |
-| **Scale** | $16 / employee / month | Unlimited | 25 GB | Everything in Growth, plus multi-location support and advanced analytics |
+| **Growth** | $12 / employee / month | Up to 150 | 5 GB | Everything in Starter, plus Payroll, Performance, Benefits, Reports, Integrations, T4 Filing, ROE generation, AI Handbook & Policies |
+| **Scale** | Custom pricing | Unlimited | 25 GB | Everything in Growth, plus multi-location support, dedicated onboarding specialist, quarterly compliance reviews — contact sales@hibiscushr.ca |
 
 Modules not included in your current plan are visible in the sidebar but display a lock icon and an upgrade prompt when clicked.
 
@@ -291,15 +294,23 @@ Configure security settings for your organization's Hibiscus HR account.
 
 > **[Screenshot: Security settings section]**
 
-### Options
+### Current Security Posture
 
-| Setting | Description |
+Hibiscus HR ships with the following security controls active by default. Most are not user-configurable — they operate at the platform level to keep every tenant safe.
+
+| Control | Description |
 |---------|-------------|
-| **Password minimum length** | Minimum characters required for all user passwords |
-| **Password complexity** | Require uppercase, numbers, and special characters |
-| **Session timeout** | Minutes of inactivity before users are automatically logged out |
-| **Two-factor authentication** | Require 2FA for all users or Super Admins only |
-| **Login attempt limit** | Number of failed logins before account is temporarily locked |
+| **Password requirements** | Minimum 8 characters, with at least one uppercase, one lowercase, one number, and one special character. Enforced on every password set |
+| **Breached-password check** | New and reset passwords are checked against the HIBP (Have I Been Pwned) database via k-anonymity — your password is never sent, only a hashed prefix. Passwords found in known breaches are rejected |
+| **HttpOnly session cookies** | Authentication tokens are stored in HttpOnly cookies, not JavaScript-readable storage. Defence against XSS. Cookies are scoped to `.hibiscushr.ca`, SameSite=Lax, Secure in production |
+| **CSRF double-submit** | State-changing requests require a matching CSRF token cookie + header. Platform-enforced across every mutating endpoint |
+| **Idle session timeout** | Sessions auto-logout after extended inactivity. A 60-second warning appears before logout |
+| **Field-level encryption** | SINs and banking details are encrypted with AES-256-GCM at the column level, above Azure's at-rest encryption |
+| **Email verification** | New user accounts must verify their email address to secure the account. A banner prompts unverified users on every login |
+| **Login rate limits** | Failed login attempts are rate-limited by email and IP to prevent credential-stuffing |
+| **SSO** | Sign in with Microsoft or Google available at the login screen; bypasses password entirely for those users |
+
+**On the Phase 2 roadmap:** TOTP / SMS 2FA enforcement, SSO-only mode for enterprise tenants, audit log export from the admin UI, and a visible in-product security posture dashboard.
 
 ---
 
@@ -360,9 +371,9 @@ Each integration tile shows its current status — **Live**, **Connected**, **Av
 
 | Integration | Connection Type | Purpose |
 |-------------|----------------|---------|
-| **LinkedIn Jobs** | OAuth 2.0 | Automatically post "We're hiring" updates to your LinkedIn page when a position opens through offboarding |
-| **Indeed Canada** | API key | Post open roles to Indeed Canada and import applicants directly into onboarding — *coming soon* |
-| **Greenhouse** | API key | ATS handoff — when a candidate is marked Hired in Greenhouse, trigger onboarding in Hibiscus HR — *coming soon* |
+| **Workable** | OAuth 2.0 + signed webhooks (live) | When a candidate moves to **Hired** in Workable, Hibiscus HR automatically creates the employee record and sends the welcome email — no double entry |
+| **Greenhouse** | Coming soon | Same pattern as Workable — ATS handoff on Hired. On the roadmap |
+| **Indeed Canada** | Not on roadmap | Indeed is a job board, not an ATS — the "hired" event lives in whatever ATS sits on top of Indeed (typically Workable or Greenhouse). Use Workable or Greenhouse integration instead |
 
 #### Government & Compliance
 
@@ -381,11 +392,13 @@ Each integration tile shows its current status — **Live**, **Connected**, **Av
 
 ### OAuth Integrations
 
-QuickBooks Online, Xero, Slack, LinkedIn Jobs, Microsoft SSO, and Google SSO use real OAuth 2.0 flows. When you click **Connect** (or **Sign in with…**), you are redirected to the provider's login page to authorize access. No API keys or secrets need to be entered manually.
+QuickBooks Online, Xero, Slack, Workable, Microsoft SSO, and Google SSO use real OAuth 2.0 flows. When you click **Connect** (or **Sign in with…**), you are redirected to the provider's login page to authorize access. No API keys or secrets need to be entered manually.
 
 For the accounting integrations (QuickBooks and Xero), Hibiscus HR requests the minimum scopes needed to post manual journal entries and read your chart of accounts — nothing more.
 
 For the SSO integrations (Microsoft and Google), authentication is handled entirely on the provider side — Hibiscus HR receives only the verified email and basic profile.
+
+For the Workable integration, Hibiscus HR registers a signed webhook subscription when you connect. Workable sends HMAC-SHA256-signed events when candidates reach the Hired stage; our webhook handler verifies the signature, extracts the candidate details, and provisions the employee record + welcome email automatically.
 
 ### Webhook Integrations
 
