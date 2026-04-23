@@ -131,6 +131,24 @@ Benefits brokers interact with Hibiscus HR through a limited, read-only portal. 
 
 ---
 
+## Your First Week of Compliance Monitoring
+
+Hibiscus HR watches your compliance posture in the background from day one, and expects you to see three things as your first week unfolds:
+
+**Day 1 — the Dashboard widget.** As soon as you've added a handful of employees, the Compliance Health widget at the top of the Dashboard starts showing a live score. It runs nine automated ESA checks (minimum wage, SINs on file, emergency contacts, vacation entitlement, termination pay, document expiry, and more) and surfaces your top 3 action items as clickable cards. Click any card to jump straight to the fix in the [Compliance module](./compliance.md).
+
+**Day 2+ — the trend line appears.** The daily scan job runs every day and stores a snapshot of your score. By your second login, the widget sparkline and the Compliance → Trend tab start showing historical data. By day 7, the "new this week" pill on the widget begins firing when new items break.
+
+**Your first Monday — the weekly digest email.** Every Monday morning, admins get an emailed compliance digest: current score, 7-day trend direction, what broke this week, link back to the Dashboard. The first digest arrives on the Monday after 7+ days of daily snapshots have accumulated.
+
+**Any day — instant alerts.** If a new action-required compliance item appears (say, an employee's SIN was removed, or a key document expired overnight), admins get an email the same day the scan runs — no waiting for Monday.
+
+Both email types are opt-in at the tenant level and can be toggled off independently at **[Settings → Notifications → Compliance](./settings.md)**. They're on by default because a silent compliance regression is exactly the problem this feature is designed to prevent.
+
+> **Tip:** If you're tired of compliance emails, turn off the toggle — don't delete the account. The Dashboard widget and trend tab keep working regardless.
+
+---
+
 ## Security and PCI Compliance
 
 Hibiscus HR uses encrypted connections (TLS) for all data in transit and AES-256 encryption for data at rest. Sensitive fields such as SINs and banking information are stored with additional field-level encryption.

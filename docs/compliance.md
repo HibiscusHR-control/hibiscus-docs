@@ -13,15 +13,34 @@ For the **policy-authoring** side of compliance (writing employee handbooks and 
 
 ---
 
-## Five Tabs
+## Six Tabs
 
 | Tab | Purpose |
 |-----|---------|
 | **Overview** | Compliance score and priority checklist |
+| **Trend** | 30/90-day history of your compliance score and findings |
 | **Documents** | All employment documents with expiry tracking |
 | **CRA Calendar** | Upcoming CRA and provincial filing deadlines |
 | **ESA Audit** | Employment Standards Act compliance checklist and overtime violations |
 | **Incidents** | Workplace incident reports and WSIB tracking |
+
+---
+
+## Compliance-as-Monitoring
+
+Hibiscus HR doesn't just tell you what's compliant right now — it **watches your compliance posture every day** and emails you when something breaks. Most HR platforms are data-entry tools; you find out you're out of compliance when an auditor tells you. Compliance-as-Monitoring flips that: the system scans your ESA obligations daily and pages you the moment a new problem appears.
+
+Three things happen automatically:
+
+1. **Daily background scan** — Every day, the platform re-runs the ESA compliance checks for your organization and stores a snapshot (score + findings). This builds your historical trend line over time.
+2. **Dashboard compliance widget** — A live health score sits at the top of your Dashboard with the top 3 action items, a 30-day sparkline, and a "new this week" pill when something recently broke.
+3. **Email notifications** — Opt-in alerts when things change:
+   - **Weekly Digest** (every Monday morning): current score, 7-day trend direction, what's new this week, link back to the Dashboard.
+   - **Instant Alerts** (same day): whenever the daily scan finds a new *action-required* item, admins are emailed immediately — not waiting for Monday.
+
+Both email types are controlled from **[Settings → Notifications → Compliance](./settings.md)**. They're on by default and can be toggled off independently. The first Monday digest arrives after at least 7 days of data; instant alerts require at least one prior daily snapshot to compare against.
+
+> **[Screenshot: Dashboard compliance health widget showing score, findings, sparkline]**
 
 ---
 
@@ -65,6 +84,41 @@ Items on the checklist are drawn from:
 - Overdue or nearly-due ROE filings
 - ESA checklist items not confirmed
 - CRA deadlines within 14 days
+
+---
+
+## Trend Tab
+
+The **Trend tab** is the historical counterpart to the Overview tab. Where Overview shows "what's broken right now," Trend shows "how has our compliance changed over time."
+
+> **[Screenshot: Trend tab showing the score line chart, stat tiles, and daily breakdown table]**
+
+### Range Selector
+
+Toggle between **7 / 30 / 90 days** at the top. Each option pulls the matching window from your daily snapshot history.
+
+### Stat Tiles
+
+Four cards summarize the selected window:
+
+| Tile | Shows |
+|------|-------|
+| **Current** | Latest score and how it changed vs the start of the window |
+| **Average** | Mean score across the window |
+| **Best** | Highest score in the window |
+| **Worst** | Lowest score in the window (red-tinted if below 60) |
+
+### Score Chart
+
+A line chart plots your daily ESA score (0–100) across the range, with horizontal reference lines at **60** (amber threshold) and **85** (green threshold). Each daily data point is coloured green / amber / red based on where it falls — a quick way to spot multi-day drops before they become a problem.
+
+### Daily Breakdown Table
+
+Below the chart, a table shows each day's exact figures: score, action-required count, watch count, passing count. Useful for pinpointing *which day* a regression started so you can correlate it with a hire, a policy change, or an expired document.
+
+### When the Tab Is Empty
+
+On a brand-new tenant there's no history yet. The Trend tab shows a placeholder ("No history yet — check back tomorrow") until the daily scan has written at least one snapshot. Full chart behaviour requires 2+ data points; most admins start seeing useful trend lines within the first week.
 
 ---
 

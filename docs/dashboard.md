@@ -11,6 +11,30 @@ The Dashboard is the first thing you see after logging in. It gives you an at-a-
 
 ---
 
+## Compliance Health Widget
+
+Sitting above the stat cards, the **Compliance Health widget** is a live at-a-glance view of your organization's ESA compliance posture. It runs the same checks as the [Compliance module](./compliance.md) and surfaces the result as a single score plus your top action items — clickable straight to the fix.
+
+> **[Screenshot: Compliance Health widget showing score ring, top 3 findings, and 30-day sparkline]**
+
+### What it shows
+
+| Element | Meaning |
+|---------|---------|
+| **Score ring (0–100)** | Your ESA compliance score. Green ≥ 85, amber 60–84, red below 60. Each action-required item deducts 15 points; each watch item deducts 5. |
+| **Checks passing** | How many of the 9 automated ESA checks passed today |
+| **Top 3 findings** | The most urgent action/watch items. Clicking a card takes you to the Compliance module with the full detail |
+| **30-day trend sparkline** | A small line chart of your last 30 daily scores. Appears once you have at least 2 days of history |
+| **"N new this week" pill** | Red badge on the header when the daily scan finds checks that are failing now but weren't 7 days ago. Each new finding also gets its own **"New"** badge |
+
+### How it updates
+
+The widget runs the compliance checks live every time you load the Dashboard, so the score is always current. It also pings the backend daily-snapshot job in the background to populate the trend line and week-over-week deltas. If the snapshot APIs fail for any reason, the core score and findings still render — only the sparkline and "new this week" pill disappear.
+
+See the [Compliance module docs](./compliance.md#compliance-as-monitoring) for the full scan / digest / alert system.
+
+---
+
 ## Stat Cards
 
 The four cards at the top of the Dashboard show your most important workforce numbers at a glance.
