@@ -7,8 +7,6 @@ sidebar_label: "Compliance"
 
 The Compliance module is your audit-readiness hub. It tracks employment document expiry dates, monitors ESA obligations, maintains a CRA filing calendar, and gives you a live compliance score across your organization. If something needs attention — an expiring certificate, a missed ROE, an overtime violation — it surfaces here.
 
-For the **policy-authoring** side of compliance (writing employee handbooks and HR policies), see the separate [AI Handbook & Policies](./handbook-policies.md) module. The two work together: policies you publish there count toward compliance readiness, and employee handbook acknowledgements are tracked separately for audit.
-
 > **[Screenshot: Compliance module showing the Overview tab with the compliance score and checklist]**
 
 ---
@@ -261,7 +259,7 @@ The ESA Audit tab checks your **real employee data** against provincial Employme
 
 A notice at the top of the tab explains the current coverage:
 
-> *This audit covers Ontario ESA and federal Canada Labour Code. Quebec labour standards (CNESST) will be incorporated in Phase 2.*
+> *This audit covers English-Canada ESA and federal Canada Labour Code. Quebec is not covered.*
 
 ### ESA Checklist
 
@@ -406,7 +404,6 @@ When a tenant account is cancelled, certain records must be retained for Canadia
 | Benefits enrollment | 7 years | CRA taxable benefit reporting |
 | Employee records | 3 years after termination | ESA |
 | Timesheets | 3 years | ESA |
-| Performance reviews | 3 years | Employment standards |
 
 ### Immutability guarantee
 

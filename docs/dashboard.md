@@ -5,83 +5,102 @@ sidebar_label: "Dashboard"
 
 # Dashboard
 
-The Dashboard is the first thing you see after logging in. It gives you an at-a-glance picture of your entire workforce — key metrics, recent activity, upcoming starts, and regulatory deadlines — without needing to navigate into any specific module.
+The Dashboard is what you see after logging in. It gives you firm health at a glance without needing to navigate anywhere: partner draws, utilization, expiring credentials, ESA compliance, upcoming CRA deadlines, and a live activity feed.
 
-> **[Screenshot: Full Dashboard view showing the four stat cards, activity feed, upcoming starts section, and CRA deadlines panel]**
+> **[Screenshot: Full Dashboard view showing the Partner Health hero, Compliance Health widget, stat cards, and activity feed]**
 
 ---
 
-## Compliance Health Widget
+## Partner Health widget
 
-Sitting above the stat cards, the **Compliance Health widget** is a live at-a-glance view of your organization's ESA compliance posture. It runs the same checks as the [Compliance module](./compliance.md) and surfaces the result as a single score plus your top action items — clickable straight to the fix.
+The **Partner Health** hero at the top of the Dashboard is a three-column snapshot of the three things that keep an accounting firm honest: partner draws, utilization, and credentials.
 
-> **[Screenshot: Compliance Health widget showing score ring, top 3 findings, and 30-day sparkline]**
+> **[Screenshot: Partner Health widget across three columns]**
+
+| Column | What it shows |
+|--------|--------------|
+| **Partner Draws** | Counts of partners flagged as over-drawn and over-policy. Clicks through to [Partner Draws](./partner-draws.md) |
+| **Utilization** | Rolling firm-average utilization %. Clicks through to [Reports → Utilization](./reports.md) |
+| **Credentials Expiring** | Credentials expiring within 60 days, broken into 14 / 30 / 60 day urgency bands. Clicks through to [Credentials](./credentials.md) |
+
+The widget auto-hides on tenants with zero partners on file.
+
+Admins also receive a **weekly Partner Health email digest** covering flagged draws and expiring credentials. When there is nothing to report, the digest is skipped entirely. A manual trigger endpoint (POST `/api/partner-draws/scan-alerts`) is available for testing.
+
+---
+
+## Compliance Health widget
+
+Sitting below Partner Health, the **Compliance Health widget** is a live view of your firm's ESA compliance posture. It runs the same nine checks as the [Compliance module](./compliance.md) and surfaces the result as a score plus your top action items.
+
+> **[Screenshot: Compliance Health widget with score ring, top 3 findings, and 30-day sparkline]**
 
 ### What it shows
 
 | Element | Meaning |
 |---------|---------|
-| **Score ring (0–100)** | Your ESA compliance score. Green ≥ 85, amber 60–84, red below 60. Each action-required item deducts 15 points; each watch item deducts 5. |
+| **Score ring (0 to 100)** | ESA compliance score. Green >= 85, amber 60 to 84, red below 60. Each action-required item deducts 15 points, each watch item deducts 5 |
 | **Checks passing** | How many of the 9 automated ESA checks passed today |
-| **Top 3 findings** | The most urgent action/watch items. Clicking a card takes you to the Compliance module with the full detail |
-| **30-day trend sparkline** | A small line chart of your last 30 daily scores. Appears once you have at least 2 days of history |
-| **"N new this week" pill** | Red badge on the header when the daily scan finds checks that are failing now but weren't 7 days ago. Each new finding also gets its own **"New"** badge |
+| **Top 3 findings** | The most urgent action / watch items. Clicking a card jumps you to the Compliance module with the full detail |
+| **30-day trend sparkline** | Line chart of your last 30 daily scores. Appears once you have at least 2 days of history |
+| **"N new this week" pill** | Red badge on the header when the daily scan finds checks failing now that weren't 7 days ago. Each new finding also gets its own **New** badge |
 
 ### How it updates
 
-The widget runs the compliance checks live every time you load the Dashboard, so the score is always current. It also pings the backend daily-snapshot job in the background to populate the trend line and week-over-week deltas. If the snapshot APIs fail for any reason, the core score and findings still render — only the sparkline and "new this week" pill disappear.
+The widget runs the compliance checks live every time you load the Dashboard. It also pings the backend daily-snapshot job to populate the trend line and week-over-week deltas. If snapshots fail for any reason, the core score and findings still render (only the sparkline and pill disappear).
 
-See the [Compliance module docs](./compliance.md#compliance-as-monitoring) for the full scan / digest / alert system.
+See [Compliance → Compliance-as-Monitoring](./compliance.md#compliance-as-monitoring) for the full scan / digest / alert system.
 
 ---
 
-## Stat Cards
+## Stat cards
 
-The four cards at the top of the Dashboard show your most important workforce numbers at a glance.
+The stat cards below Compliance Health show your most important workforce numbers.
 
 | Card | What it shows |
 |------|--------------|
-| **Total Employees** | Number of active employees in your organization |
-| **On Leave Today** | Employees with an approved leave request covering today's date |
-| **Pending Reviews** | Performance reviews that have been started but not yet submitted |
-| **Last Payroll** | The gross total of your most recent completed payroll run |
+| **Total Employees** | Active staff (partners plus T4 employees) |
+| **On Leave Today** | Employees with an approved leave request covering today |
+| **Utilization (rolling)** | Rolling firm-average utilization percentage |
+| **Last Payroll** | Gross total of your most recent completed payroll run |
 
 Each card is updated in real time from the underlying module data.
 
-> **[Screenshot: Close-up of the four stat cards]**
+> **[Screenshot: Stat cards]**
 
 ---
 
-## Recent Activity Feed
+## Recent Activity feed
 
-The activity feed on the left side of the Dashboard shows a live log of recent events across all modules. Events appear in reverse chronological order (newest first).
+The activity feed on the left of the Dashboard is a live log of events across every module, newest first.
 
-Activity types shown include:
+Activity types include:
 
 | Event type | Example |
 |-----------|---------|
-| Payroll processed | "Payroll for Apr 1–15 processed — $84,200 gross" |
+| Payroll processed | "Payroll for Apr 1 to 15 processed — $84,200 gross" |
+| Draw recorded | "Partner draw recorded — J. Ng, $6,500 (April)" |
 | Onboarding started | "New hire onboarding started for Jordan Kim" |
-| ROE urgency | "ROE required: Alex Dupont's last day was 5 days ago" |
-| Document expiring | "First Aid Certificate for Priya Nair expires in 12 days" |
-| Document expired | "WHMIS Training for Carlos Rivera expired 3 days ago" |
-| Leave pending | "3 leave requests are awaiting your approval" |
-| Performance review | "Q1 2026 review for Sarah Chen is overdue" |
+| ROE urgency | "ROE required — Alex Dupont's last day was 5 days ago" |
+| Credential expiring | "CPA Ontario permit for Priya Nair expires in 12 days" |
+| Document expired | "First Aid Certificate for Carlos Rivera expired 3 days ago" |
+| Leave pending | "3 leave requests are awaiting approval" |
+| CPD gap | "N Reyes is behind cycle target by 8 hours" |
 
-> **[Screenshot: Activity feed with several different event types visible]**
+> **[Screenshot: Activity feed]**
 
 ---
 
 ## Quick Actions
 
-Below the stat cards are four **Quick Action** buttons. These are shortcuts to the most common HR tasks:
+Below the stat cards are **Quick Action** buttons. Shortcuts to the most common tasks:
 
 | Button | What it does |
 |--------|-------------|
-| **Add Employee** | Opens the Add Employee drawer directly |
-| **Approve Leave** | Takes you to the Leave Management module filtered to pending requests |
+| **Add Employee** | Opens the Add Employee drawer |
+| **Approve Leave** | Takes you to Leave Management filtered to pending |
 | **Run Payroll** | Opens the Run Payroll wizard drawer |
-| **New Review** | Opens the New Performance Review drawer |
+| **Record Draw** | Opens the Partner Draws entry drawer |
 
 > **[Screenshot: Quick action buttons]**
 
@@ -89,36 +108,33 @@ Below the stat cards are four **Quick Action** buttons. These are shortcuts to t
 
 ## Upcoming Starts
 
-The **Upcoming Starts** section lists employees whose start date falls within the next 7 days. This helps you prepare onboarding tasks before a new hire's first day.
+**Upcoming Starts** lists employees whose start date falls in the next 7 days.
 
-For each upcoming start you will see:
+For each upcoming start:
 - Employee name and avatar initials
 - Their start date
 - Their department and job title
 
-If there are no upcoming starts in the next 7 days, this section shows a confirmation message.
-
-> **[Screenshot: Upcoming Starts section with two or three new hires listed]**
+If there are no upcoming starts, the section shows a confirmation message.
 
 ---
 
 ## Upcoming CRA Deadlines
 
-The **Upcoming CRA Deadlines** panel on the right lists regulatory filing deadlines in the next 60 days. This keeps your payroll and HR team aware of upcoming obligations without needing to navigate to the Compliance module.
+**Upcoming CRA Deadlines** lists regulatory filing deadlines in the next 60 days. This keeps payroll and admin staff aware of upcoming obligations without navigating into Compliance.
 
 Each deadline shows:
 - The deadline date
 - A description of the filing (e.g. "T4 filing deadline", "CPP/EI remittance due")
 - How many days remain
 
-Deadlines within 14 days are highlighted in amber. Deadlines that have passed are shown in red.
-
-> **[Screenshot: CRA Deadlines panel with several upcoming dates]**
+Deadlines within 14 days are highlighted in amber. Deadlines that have passed appear in red.
 
 ---
 
-## Tips for the Dashboard
+## Tips
 
-- The Dashboard is read-only — you cannot edit records from here. Use the Quick Action buttons or navigate to the relevant module to make changes.
-- The **On Leave Today** count only includes employees with an **Approved** leave status. Pending requests are not counted.
-- The **Last Payroll** card shows the most recently *processed* payroll run, not a draft or preview.
+- The Dashboard is read-only. Use Quick Actions or navigate into the module to change anything.
+- **On Leave Today** only counts **Approved** leave. Pending requests are not counted.
+- **Last Payroll** shows the most recently *processed* run, not a draft.
+- The **Partner Health** widget only appears when at least one active employee has employment type = Partner.

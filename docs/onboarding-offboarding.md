@@ -49,21 +49,9 @@ New hire onboarding is displayed as a **kanban-style board**. Each employee is r
 
 > **[Screenshot: Onboarding board showing employee cards in different stages]**
 
-### Automatic Onboarding via ATS (Workable)
+### Starting a new onboarding
 
-If your organization uses Workable for recruiting, you can skip the manual employee creation step entirely. When a candidate moves to the **Hired** stage in Workable, Hibiscus HR automatically:
-
-1. Creates the employee record from the candidate's Workable profile (name, email, job title, department)
-2. Opens a new onboarding case on the kanban board in **Pre-Boarding**
-3. Sends the employee the welcome email with a password-setup link
-
-The handoff is driven by a signed webhook from Workable. Setup takes ~2 minutes — go to **Settings → Integrations → Workable** and connect. Once connected, no further action needed — new hires flow in as they happen.
-
-See [Settings → Integrations](./settings.md#recruiting) for connection details.
-
-### Starting a New Onboarding Manually
-
-If you don't use an integrated ATS, or you need to add someone not represented in your Workable pipeline, click **+ New Onboarding** to open the New Onboarding drawer.
+Click **+ New Onboarding** to open the New Onboarding drawer.
 
 > **[Screenshot: New Onboarding drawer]**
 
@@ -114,18 +102,17 @@ A fresh token is minted and the previous link is invalidated.
 
 After setting their password and signing in for the first time, the employee is routed straight to the 8-step onboarding wizard (not the admin dashboard). They cannot reach any other part of the portal until the wizard is complete.
 
-### The 8-Step Employee Onboarding Wizard
+### The 7-Step Employee Onboarding Wizard
 
 | Step | What the employee completes |
 |------|-----------------------------|
-| **1. Welcome** | Introduction to the company, overview of what to expect |
+| **1. Welcome** | Introduction to the firm, overview of what to expect |
 | **2. Personal Info** | Legal name, address, phone, date of birth |
 | **3. Work Eligibility (SIN)** | Social Insurance Number entry — stored with field-level encryption |
 | **4. Banking** | Direct deposit information (institution number, transit number, account number) — stored encrypted |
 | **5. TD1 Tax Forms** | Federal and provincial TD1 personal tax credit claims |
-| **6. Documents** | Review and sign-off on company policies — this is where the new hire acknowledges the current compiled Employee Handbook (see [AI Handbook & Policies](./handbook-policies.md)) and any role-specific policies |
-| **7. About You** | Optional personal details — preferred name, dietary restrictions, t-shirt size, fun facts |
-| **8. All Done** | Confirmation screen showing that onboarding is complete |
+| **6. About You** | Optional personal details — preferred name, dietary restrictions, fun facts |
+| **7. All Done** | Confirmation screen showing that onboarding is complete |
 
 ### Auto-Save and Resume
 
@@ -133,7 +120,7 @@ Each step auto-saves as the employee fills it in. If the employee closes their b
 
 ### On Completion
 
-When the employee completes all 8 steps:
+When the employee completes all 7 steps:
 
 - Their employee record is updated with all the information they entered
 - HR is notified that the employee has completed self-service onboarding

@@ -82,7 +82,7 @@ For any request with **Pending** status, two buttons appear in the Review column
 |--------|---------|
 | **Status** | All, Pending, Approved, Denied |
 | **Leave Type** | All, Vacation, Sick, Parental, Bereavement, Family Responsibility, Domestic Violence |
-| **Province** | All 10 provinces |
+| **Province** | English-Canada provinces + territories |
 
 Active filters appear as removable badges below the toolbar.
 
@@ -141,7 +141,7 @@ The sidebar also includes an **ESA Quick Reference** panel showing Ontario minim
 | **Parental** | Up to 61 weeks (following pregnancy/adoption) |
 | **Domestic Violence** | 10 days (first 5 paid after 13 weeks) |
 
-> **Note:** Quebec labour standards are tracked separately and will be fully incorporated in Phase 2 of the platform. For Quebec employees, refer to the *Act respecting labour standards* for minimum entitlements.
+> **Note:** English-Canada only for now. Quebec labour standards are not covered.
 
 ---
 
@@ -151,9 +151,25 @@ Hibiscus HR applies the correct ESA rules based on each employee's **Province** 
 
 - An Ontario employee's leave is validated against the Ontario ESA
 - A BC employee's leave is validated against the BC Employment Standards Act
-- A Manitoba employee uses Manitoba standards — and so on for all 10 provinces
+- A Manitoba employee uses Manitoba standards, and so on across English-Canada
 
 The province is set on the employee record and can be updated in the [Employees](./employees.md) module.
+
+---
+
+## Continuous leave and overlap
+
+The leave view shows all approved and pending leaves for the employee side-by-side. If a new request overlaps an existing approved leave, the drawer flags the overlap so a manager can decide whether to consolidate or deny.
+
+---
+
+## Parental top-up eligibility
+
+If the firm has enabled the **parental top-up policy** in Settings → Payroll (see [Settings](./settings.md#parental-top-up-policy)), an approved parental leave surfaces a **top-up eligible** banner on the leave view: *"Top-up eligible: N weeks x $X/wk"*.
+
+Payroll uses that banner as the cue to add the top-up amount to the pay run for the eligible weeks. The banner disappears once the top-up weeks have been paid out or the leave ends, whichever comes first.
+
+Top-up policy defaults: 17 weeks at 100% of regular pay. Adjust in Settings if your firm's policy differs.
 
 ---
 

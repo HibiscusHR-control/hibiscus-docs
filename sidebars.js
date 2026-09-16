@@ -1,30 +1,74 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   docsSidebar: [
-    'intro',
-    'quick-start',
-    'getting-started',
     {
       type: 'category',
-      label: 'Modules',
+      label: 'Getting Started',
+      collapsed: false,
+      items: [
+        'intro',
+        'quick-start',
+        'getting-started',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Core Modules',
       collapsed: false,
       items: [
         'dashboard',
         'employees',
         'payroll',
-        'leave-management',
+        'partner-draws',
         'time-attendance',
-        'onboarding-offboarding',
-        'compliance',
-        'handbook-policies',
-        'performance',
+        'leave-management',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Firm Operations',
+      collapsed: false,
+      items: [
+        'credentials',
+        'professional-dues',
         'benefits',
+        'compliance',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Records',
+      collapsed: false,
+      items: [
+        'onboarding-offboarding',
         'reports',
       ],
     },
-    'employee-portal',
-    'settings',
-    'faq',
+    {
+      type: 'category',
+      label: 'Integrations',
+      collapsed: true,
+      items: [
+        'integrations',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Employee Experience',
+      collapsed: true,
+      items: [
+        'employee-portal',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Account',
+      collapsed: true,
+      items: [
+        'settings',
+        'faq',
+      ],
+    },
   ],
 };
 

@@ -38,8 +38,21 @@ Plan cards appear at the top of the Benefits page — one for each active benefi
 | **AD&D** | Accidental death and dismemberment |
 | **EAP** | Employee assistance program |
 | **HSA/WSA** | Health or wellness spending account |
+| **RRSP / Retirement** | Group RRSP or retirement plan (carries an employer contribution formula — see below) |
 
 > **[Screenshot: Plan cards in a row showing configurable plans with cost split bars]**
+
+### RRSP formula on retirement plans
+
+Retirement plans carry an `rrspFormula` JSONB field that payroll pulls at pay time to compute the employer contribution. Three shapes:
+
+| Shape | What it does |
+|-------|--------------|
+| **match** | Employer matches employee contributions up to `capPct`% of eligible earnings (e.g. 100% match up to 5% of earnings) |
+| **fixed_pct** | Flat employer contribution of `pct`% of eligible earnings, regardless of what the employee contributes |
+| **tiered** | Employer % scales with tenure |
+
+Configure the formula on the plan configuration drawer. See [Settings → Benefits Admin](./settings.md#rrsp-formula-retirement-plans).
 
 ### Creating a New Plan
 
@@ -260,8 +273,8 @@ The file is a standard comma-separated CSV that opens cleanly in Excel or Google
 
 ### Why CSV instead of EDI 834?
 
-Canadian SMB carriers (Manulife GroupNet, Sun Life Connect, Canada Life GroupNet) do not accept raw ANSI X12 834 file uploads from third-party HR platforms via their plan admin portals. That type of integration requires an ISV partnership and is generally reserved for enterprise payroll/HRIS vendors with thousands of covered lives per employer.
+Canadian benefits carriers (Manulife GroupNet, Sun Life Connect, Canada Life GroupNet) do not accept raw ANSI X12 834 file uploads from third-party HR platforms via their plan admin portals. That type of integration requires an ISV partnership and is generally reserved for enterprise payroll/HRIS vendors with thousands of covered lives per employer.
 
-For Canadian SMBs, the practical workflow is: generate the enrollment CSV → hand it to your broker or the carrier's enrollment team → they apply the changes through the carrier's own admin tools. The CSV is human-readable, easy to review before sending, and can be mapped into any carrier-specific template.
+The practical workflow: generate the enrollment CSV, hand it to your broker or the carrier's enrollment team, they apply the changes through the carrier's own admin tools. The CSV is human-readable, easy to review before sending, and can be mapped into any carrier-specific template.
 
 > **Tip:** Open the CSV in Excel to verify the enrollment records before sending. The broker-facing version downloaded from the Broker Portal redacts SINs and addresses.

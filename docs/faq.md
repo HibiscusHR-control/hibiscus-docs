@@ -11,7 +11,7 @@ sidebar_label: "FAQ"
 
 **Q: What provinces does Hibiscus HR support?**
 
-All ten Canadian provinces — Ontario, British Columbia, Alberta, Quebec, Manitoba, Saskatchewan, Nova Scotia, New Brunswick, Prince Edward Island, and Newfoundland & Labrador — plus the three territories and federal jurisdiction (Canada Labour Code). Each province's employment standards are applied based on the province set on each employee's record.
+English-Canada only for now: Ontario, British Columbia, Alberta, Manitoba, Saskatchewan, Nova Scotia, New Brunswick, Prince Edward Island, and Newfoundland & Labrador, plus the three territories and federal jurisdiction (Canada Labour Code). Each province's employment standards are applied based on the province set on the employee's record. Quebec is not supported yet.
 
 **Q: Is my data stored in Canada?**
 
@@ -35,7 +35,7 @@ Processed payroll runs cannot be reversed directly in the platform. To correct a
 
 **Q: Does Hibiscus HR file T4s automatically?**
 
-Yes. Navigate to **Payroll → T4 Filing** to generate CRA-compliant T4 XML files. The system compiles each employee's annual earnings, CPP/QPP contributions, EI premiums, and income tax withheld into the CRA's prescribed XML format. Download the file and upload it to CRA's My Business Account for electronic filing.
+Yes. Navigate to **Payroll → T4 Filing** to generate CRA-compliant T4 XML files. The system compiles each employee's annual earnings, CPP contributions, EI premiums, and income tax withheld into the CRA's prescribed XML format. Download the file and upload it to CRA's My Business Account for electronic filing. T4 amendments (SIN, Box 14, Box 22 corrections) are supported through the T4 Amendments panel on the same page.
 
 **Q: How are CPP and EI maximums handled?**
 
@@ -43,7 +43,7 @@ Hibiscus HR tracks each employee's year-to-date CPP and EI contributions. Once a
 
 **Q: My employee works in Quebec. Are QPP deductions handled?**
 
-Quebec employees contribute to the Quebec Pension Plan (QPP) instead of CPP. QPP is included in Quebec payroll calculations. Full Quebec labour standards integration (CNESST) is being completed in Phase 2.
+Hibiscus HR is English-Canada only for now. Quebec support (QPP, QPIP, CNESST, French UI, RL-1) is not shipped. If your firm has Quebec staff, this platform isn't the right fit yet.
 
 ---
 
@@ -91,39 +91,47 @@ The Time & Attendance module calculates overtime *hours* (hours above the provin
 
 ---
 
-## AI Handbook & Policies
+## Partner Draws
 
-**Q: How does the AI Handbook Generator work?**
+**Q: How do I flag someone as a partner?**
 
-You pick from 15 standard Canadian HR policy templates (vacation, sick leave, parental leave, harassment, overtime, right-to-disconnect, termination, and more). Hibiscus HR drafts the policy using Claude, grounded in the statutory minimums for every province your employees actually work in — pulled automatically from your Employees module. You edit the draft, certify it has been reviewed by counsel, and publish. Generation typically takes 15–30 seconds per policy.
+Set their employment type to **Partner** on the Employees module. Only partners appear in the Partner Draws ledger. See [Partner Draws](./partner-draws.md).
 
-**Q: What does "customer-certified" mean?**
+**Q: Our partnership is on a July to June fiscal year, not calendar year. Does the ledger handle that?**
 
-Before a policy can move from draft to published, the admin clicks through a certification modal attesting that qualified Canadian employment counsel has reviewed the policy. This is how the AI handbook feature shifts final content-accuracy liability to the customer's organization — you certify the draft is appropriate for your business before distributing it to employees. The EULA details this allocation.
+Yes. Set **partnership_fiscal_year_start_month** to `7` under Settings → Company. Every YTD, ratio, and headroom calculation on the Partner Draws page then runs against the July to June year.
 
-**Q: What if the AI generates something incorrect?**
+**Q: What tax-prep software does the T5013 CSV import into?**
 
-The certification step exists specifically for this. Hibiscus HR drafts with AI assistance; you review with counsel before publishing. The prompts are grounded in structured ESA data we maintain for all 10 provinces + federal (refreshed annually every December before the new year), so provincial minimums are accurate. But you should always have your counsel review the specific language, especially for harassment, termination, and accommodation policies.
+TaxCycle, CCH iFirm, ProFile, and ProTax all accept the CSV. The CSV isn't a T5013 slip itself — it's the source data your tax-prep tool uses to build the slip.
 
-**Q: Can I edit a generated policy?**
+---
 
-Yes — every policy opens in a split-pane editor with markdown source on the left and rendered preview on the right. Edit freely. Every save preserves the previous version in history, so nothing is lost. If you edit a currently-published policy, it automatically reverts to draft status and you need to re-certify before republishing (the certification applied to the old content, not your edits).
+## Credentials & CPD
 
-**Q: How do employees acknowledge the handbook?**
+**Q: What regulators are pre-loaded?**
 
-Employees see the current compiled handbook in the Employee Portal → Handbook. They read all policy sections inline, then type their full legal name in the signature form at the bottom and click **I Acknowledge**. The acknowledgement is timestamped with their IP and browser, and the record is permanent for that specific handbook version. Admins can view per-version acknowledgement lists from the Handbook Archive tab.
+20 Canadian regulators including CPA per province (Ontario, BC, Alberta, Saskatchewan, Manitoba, New Brunswick, Nova Scotia, PEI, Newfoundland & Labrador), LSO, LSBC, PEO, EGBC, APEGA, OAA, LSA, CIA Canada, PMAC, HRPA, and legacy CGA. Cycle length and hour targets pre-loaded. See [Credentials & CPD](./credentials.md).
 
-**Q: What happens when I compile a new handbook version after employees have signed the old one?**
+**Q: Can I log an activity that only counts for ethics hours?**
 
-The old acknowledgements stay on the record for audit purposes. Employees visiting the Handbook page after a new version is compiled will see the new content and be prompted to acknowledge the new version. Previous-version acknowledgements are never erased.
+Yes. On the CPD activity form, select **Activity Type: Ethics** and enter the hours. The credential card shows ethics hours as a sub-total against the cycle target.
 
-**Q: What's in the handbook PDF?**
+**Q: My regulator isn't on the list. Can I still track it?**
 
-Cover page (company name, title, version number, date, counsel firm if identified), table of contents, each selected policy rendered as a section, and an employee acknowledgement signature page at the end. Letter-size, PDF. Downloads to your computer and is simultaneously archived in the Handbook Archive tab.
+Yes. Select **Other** on the regulator dropdown and enter your own cycle length and target hours.
 
-**Q: Do I need to regenerate policies when ESA rules change?**
+---
 
-Hibiscus HR maintains the underlying ESA data for all 10 provinces. When provincial minimums change (usually in January for a new year), regenerate affected policies and compile a fresh handbook version. This takes minutes, not weeks. See the [AI Handbook & Policies](./handbook-policies.md) page for full details.
+## Professional Dues
+
+**Q: The firm paid our staff's CPA Ontario dues. Does that go on Box 40?**
+
+It depends. If holding the CPA is a requirement of the role (typical for CPA-track staff), it generally isn't a taxable benefit. If the credential is a nice-to-have (e.g. an HRPA for a staff accountant), it typically is. Get your accountant's read on the specific line and set the Box 40 flag accordingly.
+
+**Q: The employee paid CPA dues; we reimbursed them. How do I record that?**
+
+Set **Paid By = Employee** and toggle **Reimbursed by Employer = on**. The register captures both sides of the flow.
 
 ---
 
@@ -170,7 +178,7 @@ Yes. Each module has an Export CSV button. For a full data export across all mod
 A three-tier retention model governs deletion:
 
 - **Days 0–90 after cancellation:** Full read-only access; export everything via Settings → Billing → Export Data or Reports.
-- **Days 91–120:** Data queued for deletion. Regulated records (payroll, T4 approvals, ROE filings, benefits, employee records, compliance documents, incidents, performance reviews) are extracted and archived to **Azure Blob Storage with time-based WORM (Write-Once-Read-Many) immutability** — 7-year retention, locked policy that even our own storage administrators cannot bypass.
+- **Days 91–120:** Data queued for deletion. Regulated records (payroll, T4 approvals, ROE filings, benefits, employee records, compliance documents, incidents) are extracted and archived to **Azure Blob Storage with time-based WORM (Write-Once-Read-Many) immutability** — 7-year retention, locked policy that even our own storage administrators cannot bypass.
 - **Day 120+:** Non-regulated data is permanently deleted. Tenant database schema dropped, user accounts removed, Deletion Certificate generated.
 
 Full policy details are at [hibiscushr.ca/data-retention](https://hibiscushr.ca/data-retention).
@@ -193,15 +201,11 @@ Yes. Each step of the employee onboarding wizard auto-saves. The employee can cl
 
 ---
 
-## Compensation & Reviews
+## Compensation
 
 **Q: How do compensation changes work?**
 
 Managers or HR administrators request a compensation change (salary adjustment, promotion, role change, or demotion) from the employee's profile. The request includes a justification and proposed effective date. HR reviews the request on the Compensation Changes tab and approves or denies it. Approved changes automatically update the employee's salary and role in the system. See [Employees](./employees.md) for details.
-
-**Q: What happens during probation?**
-
-The system automatically flags employees approaching their 90-day probation end date. The Dashboard shows alerts for these employees along with a "Start Review" button. HR can create a probation review cycle to ensure all probationary employees are reviewed on time. See [Performance](./performance.md) for details on review cycles.
 
 ---
 
@@ -209,17 +213,7 @@ The system automatically flags employees approaching their 90-day probation end 
 
 **Q: What plans are available?**
 
-Hibiscus HR offers three plan tiers:
-
-- **Starter** — $8/employee/month, up to 25 employees, 1 GB storage. Includes Dashboard, Employees, Leave Management, Time & Attendance, Onboarding & Offboarding, and Compliance.
-- **Growth** — $12/employee/month, up to 150 employees, 5 GB storage. Adds Payroll, Performance, Benefits, Reports, Integrations, T4 Filing, ROE generation, and the AI Handbook Generator.
-- **Scale** — Custom pricing, unlimited employees, 25 GB storage. For established businesses with complex needs — multi-location support, dedicated onboarding specialist, quarterly compliance reviews. Contact sales@hibiscushr.ca for a quote.
-
-Modules not included in your plan are visible in the sidebar with a lock icon. Clicking a locked module shows an upgrade prompt.
-
-**Q: How do I upgrade my plan?**
-
-Go to **Settings → Billing → Change Plan**. Select the new tier and confirm. Upgrades take effect immediately. Downgrades take effect at the end of the current billing cycle.
+Hibiscus HR ships with a single tier at $18 CAD / employee / month during the founding-customer program. All modules are included. Founding customers get 50% off the first year — see [hibiscushr.ca/founding-customer](https://hibiscushr.ca/founding-customer).
 
 **Q: How does billing work?**
 

@@ -49,12 +49,12 @@ After saving the password, the employee is sent to the standard sign-in page wit
 
 The employee enters their work email and the password they just chose. From here, one of two things happens:
 
-- **If their onboarding wizard is incomplete** (which is the default for any new hire), they are routed straight to the 8-step **Self-Service Onboarding Wizard**. They cannot access any other part of the portal until the wizard is done.
+- **If their onboarding wizard is incomplete** (which is the default for any new hire), they are routed straight to the 7-step **Self-Service Onboarding Wizard**. They cannot access any other part of the portal until the wizard is done.
 - **If their onboarding is already marked complete** (e.g. an Admin entered every field in the Employee Wizard, or this employee was migrated from another system), they go directly to the Employee Portal home page.
 
 ### Step 5 — Self-Service Onboarding Wizard (new hires only)
 
-The wizard has 8 steps. Each step auto-saves as the employee fills it in, so they can close their browser and resume later from exactly where they left off.
+The wizard has 7 steps. Each step auto-saves as the employee fills it in, so they can close their browser and resume later from exactly where they left off.
 
 | # | Step | What the employee provides |
 |---|------|---------------------------|
@@ -63,11 +63,10 @@ The wizard has 8 steps. Each step auto-saves as the employee fills it in, so the
 | 3 | **Work Eligibility** | SIN (stored encrypted), work authorization (Citizen / PR / Work Permit) |
 | 4 | **Banking** | Direct deposit — institution number, transit number, account number, account type |
 | 5 | **TD1 Tax Forms** | Federal TD1 personal amount, provincial TD1 |
-| 6 | **Documents** | Sign-off on Employment Agreement, Employee Handbook, Health & Safety Policy, PIPEDA Privacy Notice, and Direct Deposit Authorization |
-| 7 | **About You** | Optional — bio, icebreaker, dietary restrictions, t-shirt size |
-| 8 | **All Done** | Confirmation and download of signed documents |
+| 6 | **About You** | Optional — bio, icebreaker, dietary restrictions |
+| 7 | **All Done** | Confirmation |
 
-When the employee clicks **Complete** on Step 8, their employee record is updated with everything they entered, the wizard is marked done, HR is notified by email and Slack, and the employee is dropped into the **Employee Portal home page**.
+When the employee clicks **Complete** on Step 7, their employee record is updated with everything they entered, the wizard is marked done, HR is notified by email and Slack, and the employee is dropped into the **Employee Portal home page**.
 
 From that point on, signing in lands them on the home page directly — the wizard is no longer reachable.
 
@@ -99,12 +98,22 @@ The home page is a personal dashboard. It shows:
 
 | Element | Description |
 |---------|-------------|
+| **Action Needed strip** | Amber card at the top when the employee has self-service fixables outstanding (see below). Auto-hides when there's nothing to fix |
 | **Welcome banner** | Greeting with the employee's first name and today's date |
 | **Stat cards** | Four cards: Vacation Days remaining, Sick Days remaining, Last Pay Date (with net amount), and Tenure (months or years since start date) |
 | **Quick Actions** | Five large cards linking to Leave, Pay & T4, Benefits, Profile, and Documents |
 | **My Profile** | A summary widget showing name, email, phone, department, role, and province with a **View / Edit** link |
 | **Leave Balances** | Year-to-date vacation and sick day usage with progress bars and a "pending requests" badge |
 | **Recent Activity** | The 3 most recent events relevant to the employee — last pay stub published, upcoming approved leaves, onboarding-complete marker |
+
+**Action Needed items:** the strip surfaces items the employee can fix themselves without asking HR. Common items include:
+
+- Direct deposit banking is incomplete
+- Emergency contact is missing name or phone
+- Personal phone number is missing
+- Temporary-resident SIN is expiring within 60 days
+
+Each row on the strip links straight to the field that needs attention. The strip disappears entirely once every item is resolved.
 
 ### Leave
 
@@ -174,32 +183,6 @@ The employee can:
 - **See expiry dates** on time-limited certifications, with amber and red badges as the expiry approaches
 
 Documents flagged as **Pending** appear in HR's Compliance Documents tab for review.
-
-### Handbook
-
-> **[Screenshot: Employee Handbook page with the content and the acknowledgement signature form at the bottom]**
-
-If your organization has compiled and published an Employee Handbook (see [AI Handbook & Policies](./handbook-policies.md)), it appears in the employee's sidebar as **Handbook**. This is where employees read the organization's official policies and record their acknowledgement that they have received and reviewed them.
-
-**What the employee sees:**
-
-- A top-of-page banner showing whether they have acknowledged the current handbook version
-  - **Amber banner** if they have NOT yet acknowledged: *"Please review and acknowledge below"*
-  - **Green banner** if they HAVE acknowledged: *"You acknowledged this handbook — signed as [name] on [date]"*
-- The full handbook content rendered inline, one policy section after another
-- If not yet acknowledged: a typed-name signature form at the bottom of the page
-
-**Signing the handbook:**
-
-1. Employee reads the content (scrolling through every policy section)
-2. Scrolls to the signature form at the bottom
-3. Types their full legal name (pre-filled from their profile — they can edit)
-4. Clicks **I Acknowledge**
-5. Submission is timestamped and stamped with their IP address; the confirmation appears immediately
-
-Once signed, the acknowledgement is permanent for that specific handbook version. If the organization compiles a new handbook version (e.g., v2 after a policy update), employees are prompted to acknowledge the new version the next time they visit the Handbook page.
-
-**What happens when there's no handbook:** if your organization has never published a handbook, the Handbook page shows: *"No handbook available yet — your employer hasn't published an employee handbook yet."*
 
 ---
 

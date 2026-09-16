@@ -5,139 +5,169 @@ sidebar_label: "Quick Start Guide"
 
 # Quick Start Guide
 
-Get your Hibiscus HR account set up and running in under 15 minutes. This guide walks you through the essential first steps — from your first login to running your first payroll.
+Get your Hibiscus HR account running in under 15 minutes. This walkthrough covers the setup an accounting firm actually needs: firm profile, staff and partners, first payroll, and the ledgers that keep the firm ticking (CPD, dues, draws).
 
 ---
 
-## Step 1 — Log In (1 minute)
+## Step 1 — Log in (1 minute)
 
-1. Open **app.hibiscushr.ca** in your browser
+1. Open **app.hibiscushr.ca**
 2. Enter the email and password from your welcome email
-3. If this is your first time, click the **"Set your password"** link in the email you received
+3. First time in? Use the **Set your password** link in the invite email
 
-You'll land on the **Dashboard** — your at-a-glance view of your entire workforce.
+You land on the **Dashboard** — firm health at a glance.
 
 ---
 
-## Step 2 — Set Up Your Company (3 minutes)
+## Step 2 — Set up the firm (3 minutes)
 
-Go to **Settings** (gear icon at the bottom of the sidebar) and click **Company**.
+Go to **Settings** (gear icon at the bottom of the sidebar) and click **Company** (in the **Firm** group).
 
-Fill in your basics:
-- **Company name** — your legal business name as registered with the CRA
+Fill in the basics:
+
+- **Firm name** — legal business name as registered with CRA
 - **CRA Business Number** — your 9-digit BN
-- **Address and province** — your primary business location
-- **Active provinces** — toggle on every province where you have employees
+- **Address and province** — the firm's primary office
+- **Active provinces** — toggle on every province where you have staff
+- **Partnership fiscal year start month** — set this only if your partnership isn't on a calendar year (e.g. July for a July–June fiscal year). Default is January
 
 Click **Save Changes**.
 
-> **Why this matters:** Your company province and CRA number are used on T4s, ROEs, and CRA remittance tracking.
+> **Why this matters:** the CRA number is used on every T4 and ROE. The fiscal-year setting drives the Partner Draws ledger.
 
 ---
 
-## Step 3 — Add Your Employees (5 minutes)
+## Step 3 — Add your staff (5 minutes)
 
 Click **Employees** in the sidebar, then **+ Add Employee**.
 
-The guided wizard walks you through 4 steps:
+The wizard has 4 steps:
 
 | Step | What to enter |
 |------|--------------|
-| **1. Personal** | Name, email, phone |
-| **2. Employment** | Job title, department, province, salary, start date |
-| **3. Emergency** | Emergency contact, SIN (optional now — employees can enter their own later) |
+| **1. Personal** | Name, work email, phone |
+| **2. Employment** | Job title, department, province, employment type, salary, start date |
+| **3. Emergency** | Emergency contact, SIN (optional now — the employee can enter it themselves) |
 | **4. Review** | Confirm everything, toggle onboarding ON, click **Add Employee** |
 
-**Short on time?** Click **Save & Complete Later** on any step. The employee is saved as a draft — finish their profile when you're ready.
+For **employment type**, pick **Partner** for partners drawing on a T5013 and **Full-Time / Part-Time / Contract** for T4 staff. Only staff marked **Partner** appear in the Partner Draws ledger.
 
-Repeat for each employee. You can also send them an **onboarding invite** so they enter their own SIN, banking, and TD1 information.
+**Short on time?** Click **Save & Complete Later** on any step. Repeat for each employee.
+
+**Migrating from another platform?** The Import Employees drawer supports CSV migration from Rise People, Wagepoint, Payworks, Humi, Ceridian Dayforce, ADP Canada, plus a generic template. Column mapping is automatic. See [Employees](./employees.md).
 
 ---
 
-## Step 4 — Send Onboarding Invites (2 minutes)
+## Step 4 — Send onboarding invites (2 minutes)
 
-For each new employee:
+For each new hire:
 
 1. Go to **Onboarding** in the sidebar
-2. Click on the employee's onboarding card
+2. Click the employee's card
 3. Click **Send Onboarding Invite**
 
-The employee receives an email and completes their own setup — SIN, banking details, TD1 forms, and policy sign-offs — before their first day. You don't need to collect paper forms.
+The employee finishes their own setup (SIN, banking, TD1) before their first day. No paper.
 
 ---
 
-## Step 5 — Run Your First Payroll (3 minutes)
+## Step 5 — Run first payroll (3 minutes)
 
-Go to **Payroll** and click **Run Payroll**.
+Go to **Payroll** and click **Run Payroll**. The wizard:
 
-The payroll wizard handles the rest:
-
-1. **Select pay period** — choose the dates
-2. **Preview** — see each employee's gross, CPP, EI, tax, and net
-3. **Review deductions** — verify the numbers
+1. **Select pay period** — pick the dates
+2. **Preflight** — sanity checks. If your staff span multiple provinces, a warning surfaces (not a blocker) listing them
+3. **Preview** — per-employee gross, CPP, EI, federal tax, provincial tax, net
 4. **Confirm and process** — click to finalize
 
-CPP, EI, and provincial tax are calculated automatically based on each employee's province and salary. The CRA remittance amount is tracked for you.
+CPP, EI, and provincial tax are calculated automatically from the T4127 tables. CRA remittance is tracked for you.
 
 ---
 
-## Step 6 — Set Up Billing (2 minutes)
+## Step 6 — Set up the firm operations ledgers
 
-Go to **Settings** (gear icon) and click **Billing**.
+The three ledgers most accounting firms want live from day one:
 
-1. **Review your plan** — Hibiscus HR offers three plan tiers:
-   - **Starter** — $8/employee/month, up to 25 employees, 1 GB storage. Includes Employees, Leave Management, Time & Attendance, Onboarding & Offboarding, and Compliance.
-   - **Growth** — $12/employee/month, up to 150 employees, 5 GB storage. Adds Payroll, Performance, Benefits, Reports, Integrations, T4 Filing, ROE generation, and the AI Handbook Generator.
-   - **Scale** — Custom pricing, unlimited employees, 25 GB storage. For established businesses with complex needs. Contact sales for a scoped quote.
-2. **Verify your payment method** — click **Add Payment Method** to securely verify a credit card via Helcim (PCI DSS Level 1 compliant — card data never touches Hibiscus HR servers, it is tokenized in your browser by HelcimPay.js)
-3. **Review estimated charges** — see your per-employee cost with applicable GST/HST/PST/QST based on your province
+### Partner Draws
 
-Billing is monthly in arrears, based on the number of active employees during the billing period.
+Go to **Partner Draws** (admin-only).
+
+1. Confirm the partners you added in Step 3 appear in the ledger. Each partner needs an **annualDrawTarget** set on their profile
+2. Add each partner's monthly (or ad-hoc) draw amount
+3. The ledger tracks YTD total, ratio against target, policy status (over-drawn / on-track / under-drawn / no-target), and remaining headroom
+
+Draw policy percentage (default 75) and tolerance percentage (default 10) come from Settings → Payroll. Fiscal-year override is honoured automatically. See [Partner Draws](./partner-draws.md).
+
+### Credentials and CPD
+
+Go to **Employees → click a staff member → Credentials tab**.
+
+1. Add the credential (CPA Ontario, CPA BC, LSO, etc.) — 20 Canadian regulators pre-loaded
+2. Cycle hours target and cycle length come from the registry
+3. Log CPD activities as they happen (verifiable / unverifiable / ethics / other)
+
+Expiring credentials feed the Dashboard's Partner Health widget. See [Credentials & CPD](./credentials.md).
+
+### Professional Dues
+
+Go to **Settings → Professional Dues** (in the **Pay & Comp** group).
+
+1. Record annual dues you pay on behalf of staff
+2. Set **paid-by** (firm / employee / split), **reimbursed by employer**, and the **T4 Box 40** taxable-benefit flag
+3. The T4 slip generator picks these up automatically at year-end
+
+See [Professional Dues](./professional-dues.md).
 
 ---
 
-## What to Do Next
+## Step 7 — Billing (2 minutes)
 
-Now that the basics are set up, explore these modules at your own pace:
+Go to **Settings → Billing**.
+
+Verify payment method through HelcimPay.js (PCI-DSS Level 1). Card data is tokenized in your browser and never touches Hibiscus HR servers.
+
+Billing is monthly in arrears, based on active employees during the billing period. Sales tax uses Canadian place-of-supply rules on your firm's province.
+
+---
+
+## What to try next
 
 | Module | What to try |
 |--------|------------|
-| **AI Handbook & Policies** | Generate your first province-aware HR policy — vacation, sick leave, or right-to-disconnect — and see it draft in under 30 seconds |
-| **Leave Management** | Create a leave request and approve it |
-| **Time & Attendance** | Enter timesheet hours for a week |
-| **Benefits** | Configure your benefit plans (10 plan types available), set eligibility rules, and enroll employees |
-| **Compliance** | Check your compliance score and review upcoming CRA deadlines |
-| **Performance** | Create a review cycle for your team |
+| **Partner Draws** | Export the T5013-friendly CSV to preview what your tax-prep handoff will look like in season |
+| **Reports → Utilization** | Set a 4- or 12-week window and see billable-hour utilization by staff member |
+| **Credentials & CPD** | Log a couple of CPD activities; watch the cycle-hours badge update |
+| **Leave Management** | Approve a leave request. If it's parental leave, the top-up eligibility surfaces automatically |
+| **Compliance** | Check your compliance score. Nine ESA rules run nightly |
+| **Integrations** | Connect QuickBooks Time (bearer token) or Karbon (AccessKey + Bearer) for time and utilization data |
 | **Broker Portal** | Invite your benefits broker via Settings → Benefits Admin → Invite Broker |
-| **Billing** | Review your plan tier and download past invoices from Settings → Billing |
 
 ---
 
-## 5-Minute Daily Routine
+## 5-minute daily routine
 
-Once you're set up, here's what a typical day looks like in Hibiscus HR:
+Once set up:
 
-1. **Check the Dashboard** — see pending leave requests, expiring documents, and CRA deadlines
-2. **Approve or deny leave requests** — one click each
-3. **Review timesheets** — approve weekly hours
-4. **Handle any alerts** — probation reviews due, documents expiring, ROE deadlines
+1. **Check the Dashboard** — Partner Health, upcoming CRA deadlines, expiring credentials, and pending leave
+2. **Approve leave requests** — one click each
+3. **Review timesheets** — approve weekly hours; billable-hours splits feed utilization
+4. **Handle alerts** — CPD gaps, credential expiries, document expiry, ROE deadlines
 
-That's it. The platform handles the compliance math — you just make the decisions.
-
----
-
-## Getting Help
-
-- **User Guide:** Browse the full documentation for detailed instructions on every module
-- **FAQ:** Check the [Frequently Asked Questions](./faq.md) for common answers
-- **Support email:** support@hibiscushr.ca — we respond within one business day
-- **Sales questions:** sales@hibiscushr.ca
-- **In-app:** Click the help icon in the bottom-left of the admin app to submit a ticket directly
-- **Demo:** [Book a walkthrough](https://hibiscushr.ca/book-demo) if you'd like a guided tour
+That's it. The platform handles the compliance math. You make the calls.
 
 ---
 
-## Keyboard Shortcuts
+## Getting help
+
+- **User Guide:** browse this documentation for every module
+- **FAQ:** the [Frequently Asked Questions](./faq.md) page
+- **Support email:** support@hibiscushr.ca (one business day)
+- **Sales:** sales@hibiscushr.ca
+- **In-app:** the help icon in the bottom-left opens a support ticket
+- **Demo:** [book a walkthrough](https://hibiscushr.ca/book-demo)
+
+---
+
+## Keyboard shortcuts
 
 | Shortcut | Action |
 |----------|--------|
@@ -146,9 +176,10 @@ That's it. The platform handles the compliance math — you just make the decisi
 
 ---
 
-## Tips for Success
+## Tips for success
 
-- **Start with 2-3 employees** to get comfortable with the system before adding your full roster
-- **Use onboarding invites** — let employees enter their own SIN and banking info instead of collecting it yourself
-- **Check compliance weekly** — the Compliance module surfaces issues before they become problems
-- **Export reports monthly** — the Reports module generates CSV exports for your accountant or board
+- **Start with a small subset of staff** to get comfortable before adding the whole firm
+- **Use onboarding invites** — let each employee enter their own SIN and banking
+- **Get partners' annualDrawTarget set early** so the ledger's policy math is meaningful from month one
+- **Check compliance weekly** — the module surfaces issues before they bite
+- **Export reports monthly** for the partners or the accountant
